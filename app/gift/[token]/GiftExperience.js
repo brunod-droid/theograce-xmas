@@ -13,16 +13,19 @@ const STORY = {
 };
 
 // Song-timed scenes, in seconds after the recipient taps "Open".
+// v6: condensed 45-second cut.
+// Nicky has a dedicated 6.5-second scene before the final 5.5-second close.
 const TIMELINE = [
-  { start:0,  end:8  },
-  { start:8,  end:17 },
-  { start:17, end:26 },
-  { start:26, end:36 },
-  { start:36, end:45 },
-  { start:45, end:55 },
-  { start:55, end:64 },
-  { start:64, end:74 }
+  { start:0,    end:5    },
+  { start:5,    end:10   },
+  { start:10,   end:15.5 },
+  { start:15.5, end:21   },
+  { start:21,   end:27   },
+  { start:27,   end:33   },
+  { start:33,   end:39.5 }, // Nicky holiday note
+  { start:39.5, end:45   }  // final TheoGrace message
 ];
+const EXPERIENCE_DURATION = 45;
 
 function mask(value){
   const chars=String(value || '').split('');
@@ -61,7 +64,7 @@ export default function GiftExperience({gift, details}) {
       if(!a) return;
       const t=Math.max(0,a.currentTime || 0);
       setScene(sceneForTime(t));
-      setProgress(Math.min(1,t/74));
+      setProgress(Math.min(1,t/EXPERIENCE_DURATION));
       if(!a.paused && !a.ended) raf.current=requestAnimationFrame(tick);
     };
     if(playing) raf.current=requestAnimationFrame(tick);
