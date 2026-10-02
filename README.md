@@ -1,84 +1,30 @@
-# TheoGrace XMAS Supabase + Vercel Demo
+# TheoGrace XMAS Experience v3
 
-This project demonstrates the architecture:
+This is a separate version from v2. It keeps the same Supabase/Vercel architecture and the same `/gift/[token]` URLs.
 
-Supabase table -> one Next.js dynamic page -> thousands of unique gift URLs.
+## What's new in v3
 
-## 1. Create a Supabase project
+- Official TheoGrace SVG logo (`public/theograce-logo.svg`)
+- Deep TheoGrace blue cinematic visual direction
+- User-provided portrait (`public/nicky.jpg`)
+- User-provided song (`public/late.m4a`)
+- One-tap start, then automatic scenes synced to the song
+- Story-style progress bars at the top
+- Tap anywhere to pause / resume
+- Personalized clues and reveal from Supabase
+- Replay button at the end
+- A handwritten-style holiday note scene
 
-Open the SQL Editor and run:
+## Important note about the Nicky message
 
-`supabase/schema-and-demo-data.sql`
+The handwritten-style copy in `GiftExperience.js` is placeholder creative copy for the prototype. It should be approved/replaced with the exact authorized wording before production use.
 
-This creates the `xmas_gifts` table and inserts 5 fictional demo orders.
+## Deploy
 
-## 2. Get Supabase credentials
+Replace the code in your existing TheoGrace repo with this v3 folder, commit, and push. Vercel should redeploy automatically.
 
-In Supabase, copy:
+You do NOT need to change the existing Supabase table or your environment variables.
 
-- Project URL
-- Service Role Key
+Test with the same demo URL, for example:
 
-Never expose the Service Role Key in browser-side code.
-
-## 3. Local test
-
-Copy `.env.example` to `.env.local` and add your real values.
-
-Then:
-
-```bash
-npm install
-npm run dev
-```
-
-Open:
-
-- http://localhost:3000/gift/tg-x7k2p9fa
-- http://localhost:3000/gift/tg-r4m8q2lc
-- http://localhost:3000/gift/tg-b6n3v8kd
-- http://localhost:3000/gift/tg-h2w7c5mz
-- http://localhost:3000/gift/tg-p9f3j6rt
-
-## 4. Deploy to GitHub + Vercel
-
-Push this one project to GitHub.
-
-Import the repository in Vercel.
-
-Add these Environment Variables in Vercel:
-
-- `SUPABASE_URL`
-- `SUPABASE_SERVICE_ROLE_KEY`
-
-Deploy.
-
-If your deployed domain is:
-
-`https://theograce-xmas.vercel.app`
-
-the five demo links become:
-
-- `/gift/tg-x7k2p9fa`
-- `/gift/tg-r4m8q2lc`
-- `/gift/tg-b6n3v8kd`
-- `/gift/tg-h2w7c5mz`
-- `/gift/tg-p9f3j6rt`
-
-## Scaling to 10,000 customers
-
-You do NOT create 10,000 files in GitHub.
-
-You import 10,000 rows into the same Supabase table.
-
-The same `/gift/[token]` page handles every order.
-
-The URLs are dynamic.
-
-## Security
-
-Use random `public_token` values rather than sequential order numbers in public links.
-
-Keep the Supabase service-role key server-side only.
-
-For production, tokens should be cryptographically random and long enough to resist guessing.
+`/gift/tg-x7k2p9fa`
