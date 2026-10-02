@@ -1,30 +1,43 @@
-# TheoGrace XMAS Experience v3
+# TheoGrace XMAS Experience v4
 
-This is a separate version from v2. It keeps the same Supabase/Vercel architecture and the same `/gift/[token]` URLs.
+This is a separate version. Keep v2 and v3 as previous working versions.
 
-## What's new in v3
+## What v4 fixes
 
-- Official TheoGrace SVG logo (`public/theograce-logo.svg`)
-- Deep TheoGrace blue cinematic visual direction
-- User-provided portrait (`public/nicky.jpg`)
-- User-provided song (`public/late.m4a`)
-- One-tap start, then automatic scenes synced to the song
-- Story-style progress bars at the top
-- Tap anywhere to pause / resume
-- Personalized clues and reveal from Supabase
-- Replay button at the end
-- A handwritten-style holiday note scene
+v3 had the working experience, official TheoGrace logo, song and the supplied Nicky photo,
+but the cinematic visual direction shown in the storyboard was not actually included as
+production assets.
 
-## Important note about the Nicky message
+v4 adds those visual layers to the live experience:
 
-The handwritten-style copy in `GiftExperience.js` is placeholder creative copy for the prototype. It should be approved/replaced with the exact authorized wording before production use.
+- official `public/theograce-logo.svg`
+- supplied `public/nicky.jpg`
+- embedded song `public/late.m4a`
+- deep TheoGrace blue / gold visual system
+- cinematic gift background for the opening/story
+- glowing gift-box visual scene
+- NYC Christmas atmosphere for the closing scene
+- stronger Nicky holiday-note treatment
+- the storyboard saved as `public/storyboard-reference.png` for design reference
+
+The three background images are packaged in the repo:
+
+- `public/scene-gift.jpg`
+- `public/scene-magic.jpg`
+- `public/scene-nyc.jpg`
 
 ## Deploy
 
-Replace the code in your existing TheoGrace repo with this v3 folder, commit, and push. Vercel should redeploy automatically.
+Replace the current project files with the contents of this ZIP and commit to GitHub.
+Vercel will redeploy automatically.
 
-You do NOT need to change the existing Supabase table or your environment variables.
+No Supabase schema or environment-variable changes are required.
 
-Test with the same demo URL, for example:
+Use the same test URL:
 
 `/gift/tg-x7k2p9fa`
+
+## Versioning recommendation
+
+Before deploying v4, create a Git tag or branch named `v3` so the current working version
+is always recoverable.

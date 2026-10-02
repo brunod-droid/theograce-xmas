@@ -119,7 +119,7 @@ export default function GiftExperience({gift, details}) {
         <div className="tgSoundHint">♪ Turn your sound on</div>
       </div>
     </section> : <section className="tgStory" onClick={togglePlayback}>
-      <div className="tgStoryBg" />
+      <div className={`tgStoryBg tgStoryBg${scene}`} />
       <div className="tgStoryTop">
         <div className="tgBars" aria-hidden="true">{TIMELINE.map((_,i)=><span key={i}><b style={{width:`${storyBars[i]*100}%`}}/></span>)}</div>
         <img className="tgOfficialLogo tgOfficialLogoLight" src="/theograce-logo.svg" alt="TheoGrace" />
@@ -127,7 +127,7 @@ export default function GiftExperience({gift, details}) {
       </div>
 
       <div className="tgScene" key={scene}>
-        {scene===0 && <>
+        {scene===0 && <><div className="tgPhotoAtmosphere tgPhotoGift" aria-hidden="true" />
           <div className="tgSpark">✦</div>
           <div className="tgEyebrow">YOUR GIFT WAS CHOSEN IN TIME</div>
           <h2>{giver} chose something especially for you before Christmas.</h2>
@@ -135,7 +135,7 @@ export default function GiftExperience({gift, details}) {
           <div className="tgMiniGift"><span/><b>For {gift.recipient_name}</b></div>
         </>}
 
-        {scene===1 && <>
+        {scene===1 && <><div className="tgPhotoAtmosphere tgPhotoMagic" aria-hidden="true" />
           <div className="tgEyebrow">THE GIFT BEFORE THE GIFT</div>
           <h2>A little part of your gift is ready to be revealed.</h2>
           <p>Not the gift itself. Just a few details from the story behind it.</p>
@@ -166,7 +166,7 @@ export default function GiftExperience({gift, details}) {
           <p className="tgFine">These weren’t created for this experience. They are part of the gift {giver} chose for you.</p>
         </>}
 
-        {scene===5 && <>
+        {scene===5 && <><div className="tgPhotoAtmosphere tgPhotoNYC" aria-hidden="true" />
           <div className="tgEyebrow">STILL A SECRET</div>
           <h2>Your real gift is still under wraps.</h2>
           <p>Chosen by {giver}.<br/>Created especially for {gift.recipient_name}.</p>

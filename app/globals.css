@@ -98,3 +98,68 @@ linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
 
 @media(min-width:600px){.tgExperience{padding:24px;background:#07192f}.tgOpening,.tgStory{width:430px;min-height:860px;height:min(900px,calc(100vh - 48px));margin:auto;border-radius:36px;border:1px solid rgba(217,179,106,.24);box-shadow:0 32px 90px rgba(0,0,0,.55)}.tgOpeningContent,.tgScene{min-height:100%}}
 @media(max-height:700px){.tgOpeningContent{padding-top:105px}.tgStoryTop{height:60px}.tgScene{padding-top:105px}.tgStory h2{font-size:29px}.tgStory p{font-size:16px}.tgClue{min-height:52px}.tgNameplate{min-height:51px}.tgNickyPhotoWrap{width:54%}.tgNickyPaper{padding:22px}.tgHandwritten{font-size:16px}}
+
+
+/* v4: cinematic photographic layers derived from the approved design direction. */
+.tgPhotoAtmosphere{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background-size:cover;
+  background-position:center;
+  opacity:.42;
+  filter:saturate(.9) contrast(1.06);
+  transform:scale(1.03);
+}
+.tgPhotoAtmosphere:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(3,26,53,.22) 0%,rgba(3,26,53,.5) 55%,rgba(3,26,53,.92) 100%),
+    radial-gradient(circle at 50% 35%,transparent 0%,rgba(3,26,53,.4) 80%);
+}
+.tgPhotoGift{background-image:url('/scene-gift.jpg')}
+.tgPhotoMagic{background-image:url('/scene-magic.jpg')}
+.tgPhotoNYC{background-image:url('/scene-nyc.jpg')}
+
+.tgStoryBg0,.tgStoryBg1,.tgStoryBg5{
+  background:linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%);
+}
+.tgScene{isolation:isolate}
+.tgScene > *:not(.tgPhotoAtmosphere){position:relative;z-index:1}
+
+.tgOpening:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:32%;
+  background:
+    linear-gradient(180deg,transparent,rgba(3,26,53,.5)),
+    url('/scene-gift.jpg') center 68% / cover no-repeat;
+  opacity:.30;
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+
+.tgNickyPhotoWrap{
+  width:78%;
+  aspect-ratio:1/1.08;
+}
+.tgNickyPhotoWrap img{
+  object-position:center 20%;
+}
+.tgNickyPaper{
+  border:1px solid rgba(217,179,106,.25);
+}
+.tgNickyRole:before{
+  content:"A HOLIDAY NOTE";
+  display:block;
+  margin-bottom:5px;
+  color:#9b7c47;
+  letter-spacing:2.6px;
+}
+
+@media(max-width:560px){
+  .tgPhotoAtmosphere{opacity:.48}
+}
