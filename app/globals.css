@@ -245,3 +245,59 @@ linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
 .tgJewelryPeek:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,26,53,.40),rgba(3,26,53,.86) 65%,#031a35),radial-gradient(circle at 50% 25%,transparent,rgba(3,26,53,.38) 65%)}
 @media(max-width:380px){.tgProductWheel{width:min(80vw,310px)}.tgProductCard{width:29%}}
 @media(prefers-reduced-motion:reduce){.tgProductOrbit{animation:none;transform:rotate(16deg)}.tgProductWheelPointer{animation:none}.tgWheelTease{animation:none!important}}
+
+
+/* v11 — SHOW THE JEWELRY.
+   The wheel itself is the reveal tease: images stay fully visible and crisp.
+   Suspense comes only from disappearing before a final selection. */
+.tgJewelryGlimpse { display:none !important; }
+
+.tgProductWheel,
+.tgWheel,
+.mysteryWheel {
+  overflow: visible;
+}
+
+.tgWheelProduct,
+.tgProductSlice,
+.wheelProduct,
+.wheel-product,
+.tgWheel img,
+.mysteryWheel img {
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+.tgWheelProduct img,
+.tgProductSlice img,
+.wheelProduct img,
+.wheel-product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none;
+}
+
+/* Give imagery visual priority over decorative overlays. */
+.tgWheelProduct::after,
+.tgProductSlice::after,
+.wheelProduct::after,
+.wheel-product::after {
+  opacity: 0 !important;
+}
+
+/* The exit is the only concealment: a clean luxury flash after the wheel has
+   been clearly visible, never a blur over the products. */
+@keyframes tgWheelExitV11 {
+  0%   { opacity:1; transform:scale(1); filter:none; }
+  65%  { opacity:1; transform:scale(1.025); filter:none; }
+  100% { opacity:0; transform:scale(1.10); filter:brightness(2.1); }
+}
+.tgWheelExit,
+.wheelExit {
+  animation: tgWheelExitV11 .65s cubic-bezier(.4,0,.2,1) forwards !important;
+}
