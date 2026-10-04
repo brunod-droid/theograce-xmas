@@ -228,3 +228,20 @@ linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
 .tgRevealCard{
   transition:transform .5s ease, opacity .5s ease;
 }
+
+
+/* v10 — visible product wheel. Products are intentionally multiple and the wheel never lands. */
+.tgProductWheel{position:relative;width:min(84vw,350px);aspect-ratio:1;margin:8px auto 2px;display:grid;place-items:center}
+.tgProductOrbit{position:relative;width:100%;height:100%;border-radius:50%;border:1px solid rgba(217,179,106,.75);background:radial-gradient(circle,#0a3159 0 25%,#061d39 26% 53%,rgba(4,19,37,.82) 54%);box-shadow:0 0 0 8px rgba(217,179,106,.05),0 25px 65px rgba(0,0,0,.35);animation:tgProductSpin 6.3s cubic-bezier(.16,.65,.16,1) both}
+.tgProductCard{position:absolute;left:50%;top:50%;width:31%;aspect-ratio:4/5;border-radius:12px;overflow:hidden;border:2px solid rgba(246,225,184,.78);background:white;box-shadow:0 9px 24px rgba(0,0,0,.38);transform:rotate(calc(var(--i)*90deg)) translateY(-128%) rotate(calc(var(--i)*-90deg));transform-origin:center center}
+.tgProductCard img{width:100%;height:100%;object-fit:cover;display:block}
+.tgProductHub{position:absolute;inset:34%;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,#0d477f,#031a35);border:1px solid rgba(217,179,106,.85);box-shadow:0 0 28px rgba(217,179,106,.24);z-index:3}
+.tgProductHub span{font:italic 42px Georgia,serif;color:#f2d79e;line-height:1}.tgProductHub small{font-size:8px;letter-spacing:1.7px;color:#f6ead2;margin-top:5px}
+.tgProductWheelPointer{position:absolute;z-index:6;top:-8px;color:#f2d79e;font-size:21px;filter:drop-shadow(0 3px 5px #000);animation:tgPointerTick .18s ease-in-out 22}
+@keyframes tgProductSpin{0%{transform:rotate(0)}50%{transform:rotate(740deg)}82%{transform:rotate(1015deg)}94%{transform:rotate(1090deg)}100%{transform:rotate(1165deg) scale(1.035);filter:blur(7px);opacity:.12}}
+.tgWheelTease{animation-delay:5.15s!important}
+.tgJewelryPeek{position:absolute;inset:0;z-index:-1;display:flex;overflow:hidden;opacity:.42;filter:saturate(.92) contrast(1.06)}
+.tgJewelryPeek img{width:38%;height:100%;object-fit:cover;filter:blur(.2px);transform:scale(1.08)}
+.tgJewelryPeek:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,26,53,.40),rgba(3,26,53,.86) 65%,#031a35),radial-gradient(circle at 50% 25%,transparent,rgba(3,26,53,.38) 65%)}
+@media(max-width:380px){.tgProductWheel{width:min(80vw,310px)}.tgProductCard{width:29%}}
+@media(prefers-reduced-motion:reduce){.tgProductOrbit{animation:none;transform:rotate(16deg)}.tgProductWheelPointer{animation:none}.tgWheelTease{animation:none!important}}
