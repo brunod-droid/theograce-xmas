@@ -348,3 +348,142 @@ linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
 
 @media(max-width:380px){.tgChristmasWheel{width:min(84vw,330px)!important}.tgChristmasJewelryHero{height:180px}}
 @media(prefers-reduced-motion:reduce){.tgChristmasWheel .tgProductOrbit{animation:none!important;opacity:1!important;transform:rotate(12deg)!important}.tgWheelTease{animation:none!important;opacity:1!important}}
+
+
+/* =========================================================
+   V13 — CHRISTMAS MAGIC REBUILD
+   Storyboard-led, warm, photographic, gift-first.
+   ========================================================= */
+.tgV13{--v13navy:#04182d;--v13deep:#020e1c;--v13gold:#e8c77e;--v13cream:#fff7e8;--v13muted:#e8dcc5;font-family:Arial,sans-serif}
+.tgV13,.tgV13 *{box-sizing:border-box}
+.tgV13Opening,.tgV13Story{position:relative;overflow:hidden;width:100%;min-height:100svh;background:
+ radial-gradient(circle at 18% 20%,rgba(240,187,84,.18),transparent 20%),
+ radial-gradient(circle at 83% 27%,rgba(255,207,108,.15),transparent 19%),
+ linear-gradient(180deg,#071b31 0%,#031426 52%,#020d19 100%);color:var(--v13cream)}
+.tgV13Opening:before,.tgV13Story:before{content:"";position:absolute;inset:0;background:
+ radial-gradient(circle at 9% 15%,#ffd98a 0 3px,transparent 4px),
+ radial-gradient(circle at 88% 11%,#f7bf58 0 4px,transparent 5px),
+ radial-gradient(circle at 77% 33%,#fff0ba 0 2px,transparent 3px),
+ radial-gradient(circle at 16% 48%,#f2bd5d 0 3px,transparent 4px),
+ radial-gradient(circle at 91% 61%,#ffd478 0 5px,transparent 6px),
+ radial-gradient(circle at 7% 76%,#f8c86e 0 3px,transparent 4px);
+filter:blur(.2px);opacity:.85;pointer-events:none}
+.tgV13Bokeh{position:absolute;inset:-8%;background:
+ radial-gradient(circle at 15% 15%,rgba(255,190,76,.55) 0 7px,transparent 18px),
+ radial-gradient(circle at 83% 17%,rgba(255,216,137,.5) 0 9px,transparent 22px),
+ radial-gradient(circle at 72% 48%,rgba(255,182,63,.38) 0 8px,transparent 24px),
+ radial-gradient(circle at 20% 66%,rgba(255,224,155,.38) 0 6px,transparent 19px),
+ radial-gradient(circle at 88% 82%,rgba(255,192,75,.46) 0 10px,transparent 27px);
+filter:blur(7px);animation:v13Breathe 7s ease-in-out infinite alternate;pointer-events:none}
+@keyframes v13Breathe{to{transform:scale(1.035);opacity:.72}}
+.tgV13Snow{position:absolute;inset:0;opacity:.22;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.9) 0 1px,transparent 1.4px);background-size:53px 53px;animation:v13Snow 14s linear infinite}
+@keyframes v13Snow{to{background-position:18px 53px}}
+.tgV13Logo,.tgV13FinalLogo{position:relative;z-index:3;width:160px;filter:brightness(0) invert(1);opacity:.97}
+.tgV13Opening{display:flex;flex-direction:column;align-items:center;text-align:center;padding:44px 24px 30px}
+.tgV13Opening .tgV13Logo{margin-top:4px}
+.tgV13OpeningCopy{position:relative;z-index:3;margin-top:36px}
+.tgV13Recipient{font:italic 34px/1.05 Georgia,serif;color:#fff;margin-bottom:10px}
+.tgV13Opening h1{margin:0;font:400 clamp(29px,8vw,42px)/1.08 Georgia,serif;letter-spacing:-.5px}
+.tgV13Opening p{margin:16px auto 0;max-width:340px;color:#f0e4d1;font:400 15px/1.55 Arial,sans-serif}
+.tgV13GiftStage{position:relative;z-index:2;width:min(88vw,390px);height:300px;margin:5px auto -5px;display:grid;place-items:center}
+.tgV13GiftStage img{position:relative;z-index:2;width:92%;max-height:270px;object-fit:contain;mix-blend-mode:screen;filter:drop-shadow(0 26px 35px rgba(0,0,0,.48)) saturate(.88) brightness(.95)}
+.tgV13GiftStage:after{content:"";position:absolute;left:7%;right:7%;bottom:16px;height:55px;background:radial-gradient(ellipse,rgba(232,199,126,.34),transparent 67%);filter:blur(7px)}
+.tgV13Glow{position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(245,197,100,.27),transparent 68%);filter:blur(9px)}
+.tgV13Open{position:relative;z-index:4;border:0;background:#fff;color:#111;border-radius:999px;padding:15px 23px 15px 26px;min-width:235px;font-size:16px;box-shadow:0 13px 30px rgba(0,0,0,.26);display:flex;justify-content:space-between;gap:18px;align-items:center}
+.tgV13Open span{font-size:26px;line-height:12px}
+.tgV13Sound{position:relative;z-index:3;margin-top:12px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#d7c5a4}
+
+.tgV13Story{display:flex;align-items:stretch;justify-content:center}
+.tgV13Backdrop{position:absolute;inset:0;background:
+ linear-gradient(180deg,rgba(2,12,23,.03),rgba(2,12,23,.46)),
+ radial-gradient(circle at 50% 75%,rgba(195,130,38,.13),transparent 34%);pointer-events:none}
+.tgV13Progress{position:absolute;z-index:30;top:max(18px,env(safe-area-inset-top));left:18px;right:54px;height:2px;display:grid;grid-template-columns:repeat(8,1fr);gap:5px}
+.tgV13Progress span{height:2px;border-radius:9px;background:rgba(255,255,255,.22);overflow:hidden}
+.tgV13Progress b{display:block;height:100%;background:rgba(255,255,255,.94);border-radius:9px}
+.tgV13Pause{position:absolute;z-index:31;top:max(7px,calc(env(safe-area-inset-top) + 7px));right:13px;width:34px;height:34px;border:0;border-radius:50%;background:rgba(2,13,24,.28);color:white;font-size:12px;backdrop-filter:blur(6px)}
+.tgV13Scene{position:relative;z-index:4;width:min(100%,460px);min-height:100svh;padding:62px 24px 38px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:v13Scene .75s ease both}
+@keyframes v13Scene{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.tgV13Kicker{font-size:10px;font-weight:700;letter-spacing:2.5px;color:var(--v13gold);margin-bottom:13px}
+.tgV13Scene h2{margin:0;max-width:390px;font:400 clamp(28px,7.6vw,39px)/1.08 Georgia,serif;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.tgV13Scene p{max-width:360px;margin:16px auto 0;font:400 16px/1.5 Georgia,serif;color:#f2e7d5}
+.tgV13GiftVisual{width:min(84vw,360px);height:245px;margin:0 auto 18px;position:relative;display:grid;place-items:center}
+.tgV13GiftVisual:before{content:"";position:absolute;width:250px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(238,186,83,.32),transparent 70%);filter:blur(10px)}
+.tgV13GiftVisual img{position:relative;width:100%;height:100%;object-fit:contain;mix-blend-mode:screen;filter:drop-shadow(0 24px 35px rgba(0,0,0,.45)) saturate(.9)}
+.tgV13GiftVisualSmall{height:220px;margin-bottom:6px}
+.tgV13Ribbon{position:relative;width:230px;height:150px;margin-bottom:24px;filter:drop-shadow(0 12px 25px rgba(0,0,0,.25))}
+.tgV13Ribbon:before,.tgV13Ribbon:after{content:"";position:absolute;top:45px;width:100px;height:70px;border:13px solid #e4bd71;border-radius:60% 45% 60% 45%;box-shadow:inset 0 0 18px rgba(255,255,255,.25)}
+.tgV13Ribbon:before{left:15px;transform:rotate(-24deg)}.tgV13Ribbon:after{right:15px;transform:scaleX(-1) rotate(-24deg)}
+.tgV13Ribbon i:first-child{position:absolute;left:105px;top:56px;width:24px;height:30px;background:linear-gradient(90deg,#b98b3f,#f0cf89,#aa7a31);border-radius:8px;z-index:2}
+.tgV13Ribbon i:last-child{position:absolute;left:109px;top:83px;width:16px;height:75px;background:linear-gradient(90deg,#b98b3f,#f0cf89,#aa7a31);clip-path:polygon(0 0,100% 0,100% 100%,50% 83%,0 100%)}
+.tgV13Sparkle{margin-top:18px;color:var(--v13gold);font-size:38px;animation:v13Sparkle 1.7s ease-in-out infinite alternate}
+@keyframes v13Sparkle{to{transform:scale(1.2) rotate(8deg);filter:drop-shadow(0 0 12px #e7bd67)}}
+
+/* The wheel: large, gold, photographic, readable. */
+.tgV13WheelTitle{font-size:30px!important;margin-bottom:8px!important}
+.tgV13WheelWrap{position:relative;width:min(88vw,385px);aspect-ratio:1;margin:0 auto 4px;display:grid;place-items:center}
+.tgV13Wheel{position:relative;width:94%;height:94%;border-radius:50%;background:
+ radial-gradient(circle at 50% 50%,#0a2947 0 22%,transparent 22.5%),
+ conic-gradient(from -30deg,#153552 0 60deg,#082641 60deg 120deg,#153552 120deg 180deg,#082641 180deg 240deg,#153552 240deg 300deg,#082641 300deg);
+border:5px solid #e6c474;box-shadow:0 0 0 6px rgba(230,196,116,.13),0 0 55px rgba(230,180,73,.25),0 30px 70px rgba(0,0,0,.48);animation:v13WheelSpin 7.4s cubic-bezier(.12,.58,.13,1) both}
+.tgV13Wheel:before{content:"";position:absolute;inset:4%;border:1px solid rgba(255,224,159,.58);border-radius:50%;pointer-events:none}
+.tgV13Pointer{position:absolute;z-index:12;top:-1px;color:#f3cf80;font-size:31px;filter:drop-shadow(0 3px 6px #000)}
+.tgV13WheelWindow{position:absolute;width:31%;height:31%;border-radius:50%;overflow:hidden;border:3px solid #e7c576;background:#fff;box-shadow:0 5px 18px rgba(0,0,0,.38),inset 0 0 0 2px rgba(255,255,255,.55);z-index:3}
+.tgV13WheelWindow img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;background:#fff;filter:none!important;opacity:1!important}
+.tgV13W0{left:34.5%;top:5.5%}.tgV13W1{right:5.5%;top:25%}.tgV13W2{right:12%;bottom:10%}.tgV13W3{left:12%;bottom:10%}.tgV13W4{left:5.5%;top:25%}.tgV13W5{left:34.5%;bottom:5.5%}
+.tgV13WheelSpokes{position:absolute;inset:0;border-radius:50%;z-index:1;background:conic-gradient(from -1deg,transparent 0 59deg,rgba(234,199,121,.72) 59.5deg 60.5deg,transparent 61deg 119deg,rgba(234,199,121,.72) 119.5deg 120.5deg,transparent 121deg 179deg,rgba(234,199,121,.72) 179.5deg 180.5deg,transparent 181deg 239deg,rgba(234,199,121,.72) 239.5deg 240.5deg,transparent 241deg 299deg,rgba(234,199,121,.72) 299.5deg 300.5deg,transparent 301deg)}
+.tgV13Hub{position:absolute;z-index:8;inset:37%;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 40% 30%,#f6dda3,#c8943e 72%);border:3px solid #ffe5aa;box-shadow:0 0 0 5px #08213b,0 5px 20px rgba(0,0,0,.4);color:#071d34}
+.tgV13Hub span{font:700 38px/1 Georgia,serif}.tgV13Hub small{font-size:7px;font-weight:800;letter-spacing:1.2px;margin-top:3px}
+@keyframes v13WheelSpin{0%{transform:rotate(0);opacity:1}58%{transform:rotate(735deg);opacity:1}86%{transform:rotate(930deg);opacity:1}95%{transform:rotate(967deg);opacity:1}100%{transform:rotate(979deg) scale(1.04);opacity:0}}
+.tgV13WheelFlash{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,#fff8d9 0,rgba(255,219,139,.72) 22%,transparent 66%);opacity:0;pointer-events:none;animation:v13Flash 7.4s both}
+@keyframes v13Flash{0%,92%{opacity:0}97%{opacity:.95}100%{opacity:0}}
+.tgV13NiceTry{height:54px;display:flex;flex-direction:column;justify-content:center;opacity:0;animation:v13Nice 7.4s both}
+.tgV13NiceTry strong{font:italic 24px Georgia,serif;color:#f3d391}.tgV13NiceTry span{font:14px Georgia,serif;color:#fff;margin-top:4px}
+@keyframes v13Nice{0%,88%{opacity:0;transform:translateY(8px)}96%,100%{opacity:1;transform:none}}
+
+/* No rectangle/card above the clue scene. Full-bleed jewelry atmosphere only. */
+.tgV13JewelryBackdrop{position:absolute;z-index:-1;inset:0;overflow:hidden}
+.tgV13JewelryBackdrop img{width:100%;height:100%;object-fit:cover;object-position:center 44%;filter:brightness(.42) saturate(1.08) contrast(1.03);transform:scale(1.08)}
+.tgV13JewelryBackdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,12,23,.32),rgba(2,12,23,.58) 45%,rgba(2,12,23,.88))}
+.tgV13Masked{display:flex;flex-direction:column;gap:8px;margin:22px 0 0}
+.tgV13Masked span{font:400 clamp(27px,8vw,38px)/1 Georgia,serif;letter-spacing:5px;color:#fff;text-shadow:0 3px 15px rgba(0,0,0,.55)}
+.tgV13Small{font-size:13px!important;color:#dfcfb5!important}
+.tgV13Reveal{width:100%;margin:12px 0 4px;display:flex;flex-direction:column;gap:10px}
+.tgV13Reveal div{font:400 clamp(29px,8vw,41px)/1.05 Georgia,serif;color:#f3d28b;text-shadow:0 0 25px rgba(232,187,91,.22)}
+.tgV13GoldenEnvelope{width:130px;height:58px;margin:17px auto 0;position:relative;border:1px solid rgba(235,198,119,.55);background:linear-gradient(145deg,rgba(226,188,109,.2),rgba(255,255,255,.03));clip-path:polygon(0 0,100% 0,100% 100%,0 100%);display:grid;place-items:center}
+.tgV13GoldenEnvelope:before{content:"";position:absolute;inset:0;background:linear-gradient(32deg,transparent 49%,rgba(236,202,133,.45) 50%,transparent 51%),linear-gradient(-32deg,transparent 49%,rgba(236,202,133,.45) 50%,transparent 51%)}
+.tgV13GoldenEnvelope span{color:#f0cb7b;z-index:2}
+.tgV13UnderWraps{margin-top:20px;padding:10px 18px;border-top:1px solid rgba(231,194,118,.45);border-bottom:1px solid rgba(231,194,118,.45);font:italic 17px Georgia,serif;color:#f0cf8b}
+.tgV13Memory{font-size:62px;color:#f1cd80;margin:22px}
+
+/* Nicky: photographic Christmas-card composition */
+.tgV13Nicky{width:100%;max-width:390px;position:relative;padding-top:18px}
+.tgV13NickyHeading{font:400 24px Georgia,serif;text-align:left;margin:0 0 12px 8px;color:#fff}
+.tgV13NickyPhoto{width:64%;height:230px;overflow:hidden;transform:rotate(-3deg);border:8px solid #f3eee4;box-shadow:0 18px 45px rgba(0,0,0,.42)}
+.tgV13NickyPhoto img{width:100%;height:100%;object-fit:cover;display:block}
+.tgV13Note{position:relative;margin:-62px 0 0 19%;width:80%;padding:28px 25px 22px;background:#f3eadb;color:#30261f;text-align:left;transform:rotate(2deg);box-shadow:0 18px 45px rgba(0,0,0,.38);font:18px/1.24 "Comic Sans MS","Bradley Hand",cursive}
+.tgV13Note strong{display:block;margin-top:12px;text-align:right;font-size:25px;font-weight:400}
+
+/* Final Christmas card, not dashboard */
+.tgV13FinalLogo{width:150px;margin-bottom:24px}
+.tgV13Delivery{display:flex;flex-direction:column;gap:7px}.tgV13Delivery small{font:18px Georgia,serif}.tgV13Delivery strong{font:400 38px Georgia,serif;color:#fff}
+.tgV13FinalRule{width:190px;height:34px;margin:14px auto;display:flex;align-items:center;gap:8px;color:#e8c478}
+.tgV13FinalRule:before,.tgV13FinalRule:after{content:"";height:1px;flex:1;background:#a57e3e}.tgV13FinalRule span{font-size:18px}
+.tgV13Coupon{display:flex;flex-direction:column;align-items:center}.tgV13Coupon small{font:13px Georgia,serif;color:#e4d5bd}.tgV13Coupon strong{margin-top:7px;font:400 34px Georgia,serif}.tgV13Coupon span{font:17px Georgia,serif;margin-top:2px}.tgV13Coupon code{margin-top:15px;border:1px dashed #b9914f;border-radius:8px;padding:10px 24px;color:#f1ca7a;font:400 22px Georgia,serif;background:rgba(0,0,0,.12)}
+.tgV13Replay{margin-top:18px;border:0;background:transparent;color:#e6d6bd;text-decoration:underline;text-underline-offset:4px;font-size:13px}
+
+@media(min-width:600px){
+  .tgV13{padding:24px;background:#06182b}
+  .tgV13Opening,.tgV13Story{width:430px;min-height:860px;height:min(900px,calc(100vh - 48px));margin:auto;border-radius:34px;border:1px solid rgba(229,196,126,.18);box-shadow:0 32px 90px rgba(0,0,0,.55)}
+  .tgV13Scene{min-height:100%}
+}
+@media(max-height:720px){
+  .tgV13Scene{padding-top:52px;padding-bottom:25px}
+  .tgV13GiftVisual{height:190px}.tgV13WheelWrap{width:min(72vh,340px)}
+  .tgV13Scene h2{font-size:28px}.tgV13Scene p{font-size:14px}
+  .tgV13NickyPhoto{height:185px}.tgV13Note{font-size:15px;padding:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .tgV13Bokeh,.tgV13Snow,.tgV13Sparkle{animation:none}
+  .tgV13Wheel{animation:none;transform:rotate(8deg);opacity:1}
+  .tgV13WheelFlash{display:none}.tgV13NiceTry{animation:none;opacity:1}
+}
