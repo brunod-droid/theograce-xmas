@@ -163,3 +163,14 @@ linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
 @media(max-width:560px){
   .tgPhotoAtmosphere{opacity:.48}
 }
+
+/* v7 — product-safe universal storytelling */
+.tgRealPackaging{width:min(72vw,330px);height:220px;margin:18px auto 16px;background:url('/theograce-packaging.png') center/contain no-repeat;filter:drop-shadow(0 20px 32px rgba(0,0,0,.22))}
+.tgPackagingAtmosphere{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(3,26,53,.25),rgba(3,26,53,.88)),url('/theograce-packaging.png') center 58%/72% auto no-repeat;opacity:.52;filter:saturate(.9)}
+.tgPackagingAtmosphere.soft{opacity:.3;filter:blur(1px) saturate(.8)}
+.tgGiftTag{margin:24px auto 0;padding:12px 22px;background:#f5ead9;color:#102e4d;font-family:cursive;font-size:25px;transform:rotate(-2deg);box-shadow:0 12px 30px rgba(0,0,0,.18);width:max-content;max-width:80%}
+.tgRevealWords{display:flex;flex-direction:column;gap:10px;width:min(86%,390px);margin:20px auto}.tgRevealWord{padding:13px 18px;border-top:1px solid rgba(217,179,106,.65);border-bottom:1px solid rgba(217,179,106,.3);font-family:Georgia,serif;font-size:clamp(25px,7vw,36px);letter-spacing:.08em;color:#f2d49c;background:linear-gradient(90deg,transparent,rgba(217,179,106,.08),transparent)}
+.tgMemoryOrb{font-size:58px;color:#e0bb75;margin:35px auto;text-shadow:0 0 30px rgba(224,187,117,.6)}
+.tgHandwritten{font-family:'Segoe Print','Bradley Hand','Comic Sans MS',cursive!important;font-size:clamp(18px,4.8vw,24px)!important;line-height:1.45!important;transform:rotate(-1.2deg)}
+.tgNickySignature{font-family:'Segoe Script','Bradley Hand',cursive;font-size:38px;color:#153657;text-align:right;margin:6px 8px -3px 0;transform:rotate(-5deg)}
+.tgEtaTitle{font-size:24px!important;margin-bottom:5px!important}.tgEta{font-family:Georgia,serif;font-size:clamp(42px,12vw,64px);color:#f3d79e;margin:6px 0 20px}.tgCoupon{margin:0 auto 18px;width:min(86%,380px);padding:18px;border:1px solid rgba(226,190,121,.65);background:rgba(3,26,53,.52);display:flex;flex-direction:column;gap:4px}.tgCoupon small{letter-spacing:.13em;text-transform:uppercase}.tgCoupon strong{font-family:Georgia,serif;font-size:34px;color:#f3d79e}.tgCoupon span{text-transform:uppercase;letter-spacing:.1em;font-size:12px}.tgCoupon code{margin:10px auto 0;padding:9px 28px;background:#f7f1e7;color:#082f5d;font-family:Georgia,serif;font-size:20px;letter-spacing:.12em;border-radius:3px}
