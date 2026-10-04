@@ -2,8 +2,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 const STORY={names:{hint:'These names will always be close to you.'},name:{hint:'One name can hold a whole story.'},dates:{hint:'Some moments deserve to stay with you.'},initials:{hint:'Sometimes the smallest details mean the most.'},places:{hint:'Some places stay with you wherever you go.'},birthstones:{hint:'A little color can hold a lot of meaning.'},words:{hint:'The right words can stay with you for a long time.'},photo:{hint:'Some memories deserve to stay close.'},mixed:{hint:'Every detail was chosen for a reason.'}};
-const TIMELINE=[{start:0,end:5},{start:5,end:10},{start:10,end:15.5},{start:15.5,end:21},{start:21,end:27},{start:27,end:33},{start:33,end:39.5},{start:39.5,end:45}];
-const EXPERIENCE_DURATION=45;
+const TIMELINE=[{start:0,end:6},{start:6,end:12},{start:12,end:18.5},{start:18.5,end:25},{start:25,end:32},{start:32,end:39},{start:39,end:47},{start:47,end:55.1}];
+const EXPERIENCE_DURATION=55.1;
 function mask(value){return String(value||'').split('').map((c,i)=>/[A-Za-z0-9]/.test(c)&&i>0?'_':c).join('');}
 function firstName(value){return String(value||'').trim().split(/\s+/)[0]||'Someone';}
 function sceneForTime(s){const i=TIMELINE.findIndex(x=>s>=x.start&&s<x.end);return i<0?TIMELINE.length-1:i;}
@@ -27,6 +27,6 @@ export default function GiftExperience({gift,details=[]}){
  {scene===4&&<><div className="tgEyebrow">THE REAL DETAILS</div>{details.length?<div className="tgRevealWords">{details.map((x,i)=><div className="tgRevealWord" key={i}>{x}</div>)}</div>:<div className="tgMemoryOrb">♡</div>}<p className="tgFine">These are part of the actual gift {giver} chose. The jewelry itself stays secret.</p></>}
  {scene===5&&<><div className="tgEyebrow">STILL A SECRET</div><h2>Your real gift is still under wraps.</h2><p>Chosen by {giver}.{hasRecipient&&<><br/>Created especially for {recipient}.</>}</p><div className="tgGoldRule"/><p className="tgGoldText">{story.hint}</p></>}
  {scene===6&&<div className="tgNickyCard"><div className="tgNickyPhotoWrap"><img src="/nicky.jpg" alt="Holiday message portrait"/></div><div className="tgNickyPaper"><div className="tgHandwritten">I hope this little glimpse of your gift brings a smile while you wait for the real surprise to arrive.<br/><br/>Wishing you a beautiful holiday season!</div><div className="tgNickySignature">Nicky</div><div className="tgNickyName">Nicky Hilton</div></div></div>}
- {scene===7&&<><div className="tgEyebrow">YOUR GIFT IS ON ITS WAY</div><h2 className="tgEtaTitle">Estimated delivery</h2><div className="tgEta">{gift.eta||'Monday 28'}</div><div className="tgCoupon"><small>A little something for the wait</small><strong>{gift.coupon_value||'$30'} OFF</strong><span>your next order</span><code>{gift.coupon||'XMAS30'}</code></div><button className="tgReplay" onClick={e=>{e.stopPropagation();begin()}}>Replay the experience ↻</button></>}
+ {scene===7&&<><div className="tgFinalGiftMark">♡</div><div className="tgEyebrow">YOUR GIFT IS ON ITS WAY</div><h2 className="tgEtaTitle">Estimated delivery</h2><div className="tgEta">{gift.eta||'Monday 28'}</div><div className="tgFinalDivider"><span>✦</span></div><div className="tgCoupon"><small>A little something for the wait</small><strong>{gift.coupon_value||'$30'} OFF</strong><span>your next order</span><code>{gift.coupon||'XMAS30'}</code></div><button className="tgReplay" onClick={e=>{e.stopPropagation();begin()}}>Replay the experience ↻</button></>}
  </div><div className="tgTapHint">{playing?'Tap anywhere to pause':'Tap anywhere to continue'}</div></section>}</main>
 }
