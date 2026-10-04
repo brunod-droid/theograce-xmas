@@ -189,3 +189,42 @@ linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
 @keyframes tgPointerTick{50%{transform:rotate(10deg) translateY(2px)}}
 @keyframes tgTeaseIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.tgWheelDisc{animation:none;transform:rotate(18deg)}.tgWheelPointer{animation:none}.tgWheelTease{animation:none}}
+
+
+/* v9 — jewelry glimpses: show real jewelry atmosphere without implying an exact ordered design */
+.tgJewelryGlimpse{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background-position:center;
+  background-size:cover;
+  opacity:.30;
+  filter:saturate(.8) contrast(1.05);
+  transform:scale(1.03);
+  pointer-events:none;
+}
+.tgJewelryGlimpse:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(2,20,42,.40),rgba(2,20,42,.82)),
+    radial-gradient(circle at 50% 45%,transparent 0%,rgba(2,20,42,.45) 75%);
+}
+.tgJewelryGlimpse1{background-image:url('/jewelry-glimpse-1.jpg')}
+.tgJewelryGlimpse2{background-image:url('/jewelry-glimpse-2.jpg')}
+.tgJewelryGlimpse3{background-image:url('/jewelry-glimpse-3.jpg')}
+
+.tgWheelScene .tgJewelryGlimpse,
+.tgClueScene .tgJewelryGlimpse{
+  opacity:.24;
+}
+
+/* slower, more luxurious transitions */
+.tgScene{
+  animation-duration:.8s !important;
+}
+.tgClueCard,
+.tgRevealCard{
+  transition:transform .5s ease, opacity .5s ease;
+}
