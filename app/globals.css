@@ -220,3 +220,18 @@ linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
 .tgNickyCard:after{content:'✦';position:absolute;right:5%;top:9%;color:#f0ca7d;font-size:26px;text-shadow:0 0 20px rgba(240,202,125,.55)}
 .tgCoupon{box-shadow:0 18px 45px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.035),0 0 30px rgba(217,179,106,.07)!important}
 @media(prefers-reduced-motion:reduce){.tgSnowField i,.tgJewelryMood .spark{animation:none}.tgSnowField{opacity:.16}}
+
+/* v7.3 emotional polish */
+.tgMadeSlowly{margin-top:7px;font:600 10px/1.3 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,244,219,.72)}
+.tgJewelryLight{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.tgJewelryLight i{position:absolute;width:1px;height:34vh;top:-12vh;background:linear-gradient(180deg,transparent,rgba(255,229,171,.38),transparent);opacity:.2;transform:rotate(32deg);animation:tgJewelrySweep 8s ease-in-out infinite}
+.tgJewelryLight i:nth-child(1){left:18%;animation-delay:-1s}.tgJewelryLight i:nth-child(2){left:54%;height:26vh;opacity:.12;animation-delay:-5s}.tgJewelryLight i:nth-child(3){left:83%;height:22vh;opacity:.16;animation-delay:-3s}
+@keyframes tgJewelrySweep{0%,72%{transform:translate3d(-15vw,-10vh,0) rotate(32deg);opacity:0}78%{opacity:.28}100%{transform:translate3d(24vw,105vh,0) rotate(32deg);opacity:0}}
+.tgRevealIntro{max-width:320px;margin:0 auto 14px;font:italic 14px/1.45 Georgia,serif;color:#ead7b3}
+.tgRevealWord{opacity:0;transform:translateY(10px);animation:tgEngraveIn .9s cubic-bezier(.2,.7,.2,1) forwards}
+.tgRevealWord:nth-child(1){animation-delay:.12s}.tgRevealWord:nth-child(2){animation-delay:.55s}.tgRevealWord:nth-child(3){animation-delay:.98s}.tgRevealWord:nth-child(4){animation-delay:1.41s}.tgRevealWord:nth-child(5){animation-delay:1.84s}.tgRevealWord:nth-child(6){animation-delay:2.27s}
+@keyframes tgEngraveIn{0%{opacity:0;transform:translateY(10px);filter:blur(3px)}55%{opacity:.72;filter:blur(0);text-shadow:0 0 20px rgba(244,213,148,.58)}100%{opacity:1;transform:none;filter:none}}
+.tgEmotionalEnding{width:min(88%,370px);margin:18px auto 0;padding:20px 12px 0;border-top:1px solid rgba(226,190,121,.38);display:flex;flex-direction:column;align-items:center;gap:9px}
+.tgEmotionalEnding strong{font:italic 24px/1.18 Georgia,serif;color:#f4ddb0}.tgEmotionalEnding span{font:400 16px/1.3 Georgia,serif;color:#fff8eb}
+.tgCoupon{display:none!important}
+@media(prefers-reduced-motion:reduce){.tgJewelryLight i,.tgRevealWord{animation:none!important}.tgRevealWord{opacity:1;transform:none;filter:none}}
