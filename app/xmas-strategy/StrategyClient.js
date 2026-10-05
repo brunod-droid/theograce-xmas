@@ -196,7 +196,7 @@ export default function StrategyClient(){
       <div className={styles.currentExperienceGrid}>
         <div className={styles.currentCard}>
           <div className={styles.currentLabel}>CURRENT US FLOW</div>
-          <img src="/current-us-form.png" alt="Current US compensation form"/>
+          <img src="/api/xmas-strategy/asset/current-us-form.png" alt="Current US compensation form"/>
           <div className={styles.currentNotes}>
             <b>What works</b><span>Simple choice between free gift and discount.</span>
             <b>What breaks the experience</b><span>Looks like a form, not a recovery moment. Product choice feels transactional.</span>
@@ -204,7 +204,7 @@ export default function StrategyClient(){
         </div>
         <div className={styles.currentCard}>
           <div className={styles.currentLabel}>CURRENT EU FLOW</div>
-          <img src="/current-eu-form.png" alt="Current EU compensation form"/>
+          <img src="/api/xmas-strategy/asset/current-eu-form.png" alt="Current EU compensation form"/>
           <div className={styles.currentNotes}>
             <b>What works</b><span>Clear compensation path.</span>
             <b>What breaks the experience</b><span>Very functional, low emotional value, and not connected to Christmas gifting.</span>
@@ -225,7 +225,7 @@ export default function StrategyClient(){
 
       <div className={styles.catalogGrid}>
         <div className={styles.catalogVisual}>
-          <img src="/market-comparison.png" alt="US and EU compensation product comparison"/>
+          <img src="/api/xmas-strategy/asset/market-comparison.png" alt="US and EU compensation product comparison"/>
         </div>
         <div className={styles.catalogSummary}>
           <div className={styles.catalogBucket}>
@@ -252,7 +252,7 @@ export default function StrategyClient(){
       </div>
 
       <div className={styles.productStrip}>
-        <img src="/compensation-catalog.png" alt="Additional compensation products"/>
+        <img src="/api/xmas-strategy/asset/compensation-catalog.png" alt="Additional compensation products"/>
         <div>
           <small>ADDITIONAL OPTIONS</small>
           <h3>Not every compensation has to be jewelry.</h3>
