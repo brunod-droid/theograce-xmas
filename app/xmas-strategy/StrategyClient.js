@@ -30,6 +30,45 @@ const brands = {
   }
 };
 
+const emailTemplates = [
+  {label:'Red Event · free gift not on time',trigger:'Original order expected 2–3 days after Christmas; compensation choice',body:`Dear {{customer.firstName}},
+This is Sam from Customer Service. I wanted to personally update you regarding your order.
+Christmas is one of the most magical times of the year, and we've been truly touched by how many people chose us to help make their holiday celebrations extra special. Because of the incredible demand this Christmas season, we've received an overwhelming number of orders. Unfortunately, this means your original order is now expected to arrive 2–3 days after Christmas.
+Our team is working around the clock with one goal in mind: getting your gift to you as quickly as possible.
+In the meantime, we don't want you to be left empty-handed this Christmas. We've put together a few special options for you to choose from - including a free gift, just for you:
+{{customer.custom.lastProactiveGeneral1Str}}
+We hope you'll find something that brings a little extra joy to your holiday season.
+Wishing you and your loved ones a Christmas filled with warmth, love, laughter, and beautiful moments together. 🎄✨
+With care,
+Sam
+Your Customer Care Team`},
+  {label:'Red Event · complimentary gift on time',trigger:'Original order late; complimentary earrings expected by Christmas',body:`Dear {{customer.firstName}},
+This is Sam from Customer Service. I wanted to personally update you regarding your order.
+Christmas is one of the most magical times of the year, and we've been truly touched by how many people chose us to help make their holiday celebrations extra special. Because of the incredible demand this Christmas season, we've received an overwhelming number of orders. Unfortunately, this means your original order is now expected to arrive 2–3 days after Christmas.
+We know how important it is to have something special waiting under the Christmas tree, and we didn't want you to be left empty-handed on Christmas morning.
+So, here's what we've done: we're sending you a complimentary pair of our most-loved earrings! 🎁
+A timeless, elegant style that will arrive just in time for Christmas, beautifully ready to wrap and place under the tree.
+((((((PHOTO)))))
+Think of it as a little extra Christmas magic from us to you. These earrings are a customer favorite for a reason, and we hope they'll bring a beautiful surprise and an extra smile to someone special this Christmas.
+Your original order is still on its way and remains our top priority. We'll continue to keep you updated every step of the way.
+Wishing you and your loved ones a wonderful Christmas filled with joy, love, laughter, and unforgettable moments.
+With care,
+Sam
+Your Customer Care Team`},
+  {label:'Last Day · shipped, might be late',trigger:'Shipped order; courier risk of 1–3 days',body:`Dear {{customer.firstName}},
+This is Sam from Customer Service. I wanted to personally update you regarding your order.
+Christmas is one of the most magical celebrations of the year, and we've been so touched by how many families chose us to be part of their holiday traditions. Our courier has let us know there may be a slight delay of 1–3 days in your delivery, which means your order might arrive just after Christmas. We're sorry for the timing, especially knowing how important it is to have your gifts ready for Christmas Day.
+What we can promise you is this: our team is doing everything in our power to get your jewelry to you as quickly as possible, and your order remains our top priority.
+Because we never want you to feel empty-handed on Christmas morning, we've put together some special options just for you - including a free gift:
+{{customer.custom.lastProactiveGeneral1Str}}
+We know there's something special about seeing a loved one's face light up as they unwrap a meaningful gift. Our customers absolutely love what we create, and we're confident that when your jewelry arrives, the joy and excitement it brings will make the wait worthwhile.
+Thank you for your trust and patience. It means the world to us, especially during this busy holiday season.
+Wishing you and your loved ones a wonderful Christmas filled with love, laughter, beautiful surprises, and unforgettable moments together. 🎄✨
+With care,
+Sam
+Your Customer Care Team`}
+];
+
 function Step({n,title,children,tone='blue'}) {
   return <div className={`${styles.step} ${styles[tone]}`}>
     <div className={styles.stepNum}>{n}</div>
@@ -40,6 +79,7 @@ function Step({n,title,children,tone='blue'}) {
 export default function StrategyClient(){
   const [scenario,setScenario]=useState('red');
   const [brand,setBrand]=useState('theograce');
+  const [emailTemplate,setEmailTemplate]=useState(0);
   const b=brands[brand];
 
   return <main className={styles.page}>
@@ -298,9 +338,16 @@ export default function StrategyClient(){
       </div>
     </section>
 
+    <section className={styles.section}>
+      <div className={styles.sectionHeading}><span>07</span><div><h2>Customer communication playbook</h2><p>Actual customer-care templates · original wording retained · select a scenario to preview the email.</p></div></div>
+      <div className={styles.emailTabs}>{emailTemplates.map((item,i)=><button key={i} className={emailTemplate===i?styles.emailSelected:''} onClick={()=>setEmailTemplate(i)}>{item.label}</button>)}</div>
+      <div className={styles.emailPreview}><div className={styles.emailMeta}><strong>{emailTemplates[emailTemplate].label}</strong><span>{emailTemplates[emailTemplate].trigger}</span></div><div className={styles.emailText}>{emailTemplates[emailTemplate].body}</div></div>
+      <p className={styles.emailFootnote}>The customer variables and product-photo placeholder remain unchanged. The final links, brand videos and compensation landing pages will be added later.</p>
+    </section>
+
     <section className={styles.sectionAlt}>
       <div className={styles.sectionHeading}>
-        <span>07</span><div><h2>Communication architecture</h2><p>We will add the final email copy and video assets as they become available.</p></div>
+        <span>08</span><div><h2>Communication architecture</h2><p>We will add the final email copy and video assets as they become available.</p></div>
       </div>
       <div className={styles.assetGrid}>
         <div className={styles.assetCard}>
