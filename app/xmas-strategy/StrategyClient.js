@@ -199,8 +199,28 @@ export default function StrategyClient(){
         <div className={styles.brandCols}>
           <div><small>RED EVENT</small><strong>{b.redComp}</strong></div>
           <div><small>LAST-DAY MONITORING</small><strong>{b.monitoringComp.join(' · ')}</strong></div>
-          <div><small>BRANDED VIDEO</small><strong>{b.video}</strong><em>TBD / production asset</em></div>
+          <div><small>BRANDED EXPERIENCE</small><strong>{b.video}</strong><em>{brand === "theograce" ? "Validated · live experience available below" : brand === "oak" ? "In progress · placeholder below" : "Not yet available"}</em></div>
         </div>
+      </div>
+    </section>
+
+    <section className={styles.section}>
+      <div className={styles.sectionHeading}>
+        <span>VIDEO</span><div><h2>Christmas gift experiences</h2><p>Approved TheoGrace experience and Oak & Luna production placeholder.</p></div>
+      </div>
+      <div className={styles.experienceGrid}>
+        <article className={styles.experienceCard}>
+          <div className={styles.experienceHeader}><h3>TheoGrace</h3><span>VALIDATED</span></div>
+          <p>Approved interactive Christmas experience. Open the experience below to play the original animation and soundtrack.</p>
+          <iframe className={styles.experienceFrame} title="TheoGrace validated Christmas gift experience" src="https://theograce-xmas.vercel.app/gift/tg-x7k2p9fa" loading="lazy" allow="autoplay" />
+          <a className={styles.experienceLink} href="https://theograce-xmas.vercel.app/gift/tg-x7k2p9fa" target="_blank" rel="noopener noreferrer">Open validated TheoGrace experience ↗</a>
+        </article>
+        <article className={styles.experienceCard}>
+          <div className={styles.experienceHeader}><h3>Oak &amp; Luna</h3><span>IN PROGRESS</span></div>
+          <p>Same approved TheoGrace experience, with Oak &amp; Luna logo and gift packaging, and without the Nicky Hilton scene.</p>
+          <div className={styles.experiencePlaceholder}><span>✧</span><strong>Oak &amp; Luna Christmas experience</strong><small>Video / interactive preview coming soon</small></div>
+          <div className={styles.experiencePending}>Placeholder only — no unvalidated video displayed.</div>
+        </article>
       </div>
     </section>
 
@@ -347,18 +367,18 @@ export default function StrategyClient(){
 
     <section className={styles.sectionAlt}>
       <div className={styles.sectionHeading}>
-        <span>08</span><div><h2>Communication architecture</h2><p>We will add the final email copy and video assets as they become available.</p></div>
+        <span>08</span><div><h2>Communication architecture</h2><p>Customer email templates are included. TheoGrace validated experience is linked above; Oak & Luna is in progress.</p></div>
       </div>
       <div className={styles.assetGrid}>
         <div className={styles.assetCard}>
           <div className={styles.assetIcon}>✉</div><h3>Customer email</h3>
           <p>Late / at-risk message, clear explanation, emotional framing, CTA to video or compensation selection.</p>
-          <span>CONTENT TBD — YOU WILL PROVIDE</span>
+          <span>3 EMAIL TEMPLATES INCLUDED</span>
         </div>
         <div className={styles.assetCard}>
           <div className={styles.assetIcon}>▶</div><h3>Christmas videos</h3>
-          <p>Three branded versions: TheoGrace, Oak & Luna, MYKA.</p>
-          <span>VIDEO ASSETS TBD</span>
+          <p>TheoGrace validated interactive experience linked above. Oak &amp; Luna placeholder in progress; MYKA pending.</p>
+          <span>THEOGRACE LIVE · OAK &amp; LUNA IN PROGRESS</span>
         </div>
         <div className={styles.assetCard}>
           <div className={styles.assetIcon}>🎁</div><h3>Compensation products</h3>
