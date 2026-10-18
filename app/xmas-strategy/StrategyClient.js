@@ -390,15 +390,28 @@ export default function StrategyClient(){
 
     <section className={styles.section}>
       <div className={styles.sectionHeading}>
-        <span>08</span><div><h2>2025 baseline → 2026 opportunity</h2><p>This section is ready for the real 2025 numbers so we can quantify impact and prioritize compensation.</p></div>
+        <span>08</span><div><h2>2025 compensation breakdown</h2><p>Year-over-year comparison: 2024 actual vs 2025 projected. The original graphic's “2023” label was a typo; figures and displayed YoY values are unchanged.</p></div>
       </div>
       <div className={styles.metricGrid}>
-        <div><small>LATE XMAS ORDERS</small><strong>—</strong><span>2025 actual</span></div>
-        <div><small>CONTACT RATE</small><strong>—</strong><span>late-order customers</span></div>
-        <div><small>REFUND / CREDIT COST</small><strong>—</strong><span>2025 actual</span></div>
-        <div><small>CANCEL RATE</small><strong>—</strong><span>late-order customers</span></div>
+        <div><small>LATE ORDERS</small><strong>20K</strong><span>2025 projected</span></div>
+        <div><small>COMPENSATION CASES</small><strong>7,952</strong><span>2025 projected</span></div>
+        <div><small>TOTAL COST</small><strong>$74,246</strong><span>2025 projected</span></div>
+        <div><small>YOY COST</small><strong>+245%</strong><span>2024 vs 2025, as supplied</span></div>
       </div>
-      <div className={styles.placeholder}>Next input: 2025 volumes, complaint rate, refunds, cancellations, compensation cost, and top affected SKUs / families.</div>
+      <div style={{overflowX:'auto',marginTop:24}}>
+        <table style={{width:'100%',borderCollapse:'collapse',textAlign:'left',minWidth:680}}>
+          <thead><tr><th>Category</th><th>2024 actual</th><th>2025 projected</th><th>Cost</th><th>YoY variance</th></tr></thead>
+          <tbody>
+            <tr><td>Free Gift Redemption</td><td>1,077</td><td>2,665</td><td>$35,164</td><td>+255%</td></tr>
+            <tr><td>Service Coupons ($20 - $50)</td><td>624</td><td>2,524</td><td>$0</td><td>+400%</td></tr>
+            <tr><td>Shipping Refunds</td><td>1,242</td><td>2,617</td><td>$34,702</td><td>+210%</td></tr>
+            <tr><td>$30 - Keep Your Order</td><td>N/A</td><td>146</td><td>$4,380</td><td>N/A</td></tr>
+            <tr><td>Cancellation Requests</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            <tr style={{fontWeight:700,borderTop:'2px solid currentColor'}}><td>Total expenditure</td><td>2,943</td><td>7,952</td><td>$74,246</td><td>+245%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style={{fontSize:12,opacity:.75,marginTop:12}}>Source: supplied compensation breakdown. Year corrected from 2023 to 2024; all numerical values and supplied YoY percentages preserved.</p>
     </section>
 
     <section className={styles.footer}>
