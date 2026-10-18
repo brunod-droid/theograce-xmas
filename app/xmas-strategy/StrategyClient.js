@@ -134,7 +134,10 @@ export default function StrategyClient(){
           </Step>
           <Step n="2" title="Send branded late-XMAS message">
             Email / SMS explains the situation clearly and links to the branded Christmas experience.
-            <div className={styles.tbd}>EMAIL COPY · TO BE ADDED</div>
+            <div className={styles.inlineEmailBlock}>
+              <div className={styles.emailTabs}>{emailTemplates.slice(0,2).map((item,i)=><button key={i} className={emailTemplate===i?styles.emailSelected:''} onClick={()=>setEmailTemplate(i)}>{item.label}</button>)}</div>
+              <div className={styles.emailPreview}><div className={styles.emailMeta}><strong>{emailTemplates[emailTemplate===2?0:emailTemplate].label}</strong><span>{emailTemplates[emailTemplate===2?0:emailTemplate].trigger}</span></div><div className={styles.emailText}>{emailTemplates[emailTemplate===2?0:emailTemplate].body}</div></div>
+            </div>
           </Step>
           <Step n="3" title="Give something that still arrives for Christmas" tone="gold">
             <b>US:</b> automatically send a ShineOn late gift where delivery timing still works.
@@ -166,6 +169,9 @@ export default function StrategyClient(){
           <Step n="2" title="Proactive late-risk message">
             Tell the customer the gift <b>might</b> arrive late — before Christmas Eve disappointment.
             Include the branded Christmas video / experience.
+            <div className={styles.inlineEmailBlock}>
+              <div className={styles.emailPreview}><div className={styles.emailMeta}><strong>{emailTemplates[2].label}</strong><span>{emailTemplates[2].trigger}</span></div><div className={styles.emailText}>{emailTemplates[2].body}</div></div>
+            </div>
           </Step>
           <Step n="3" title="Customer chooses the compensation" tone="gold">
             Email links to a simple compensation page where the customer picks one option:
@@ -199,14 +205,14 @@ export default function StrategyClient(){
         <div className={styles.brandCols}>
           <div><small>RED EVENT</small><strong>{b.redComp}</strong></div>
           <div><small>LAST-DAY MONITORING</small><strong>{b.monitoringComp.join(' · ')}</strong></div>
-          <div><small>BRANDED EXPERIENCE</small><strong>{b.video}</strong><em>{brand === "theograce" ? "Validated · live experience available below" : brand === "oak" ? "In progress · placeholder below" : "Not yet available"}</em></div>
+          <div><small>BRANDED EXPERIENCE</small><strong>{b.video}</strong><em>{brand === "theograce" ? "Validated · live experience available below" : brand === "oak" ? "Preview video available below" : "Not yet available"}</em></div>
         </div>
       </div>
     </section>
 
     <section className={styles.section}>
       <div className={styles.sectionHeading}>
-        <span>VIDEO</span><div><h2>Christmas gift experiences</h2><p>Approved TheoGrace experience and Oak & Luna production placeholder.</p></div>
+        <span>VIDEO</span><div><h2>Christmas gift experiences</h2><p>Approved TheoGrace experience and Oak & Luna video preview.</p></div>
       </div>
       <div className={styles.experienceGrid}>
         <article className={styles.experienceCard}>
@@ -216,10 +222,11 @@ export default function StrategyClient(){
           <a className={styles.experienceLink} href="https://theograce-xmas.vercel.app/gift/tg-x7k2p9fa" target="_blank" rel="noopener noreferrer">Open validated TheoGrace experience ↗</a>
         </article>
         <article className={styles.experienceCard}>
-          <div className={styles.experienceHeader}><h3>Oak &amp; Luna</h3><span>IN PROGRESS</span></div>
+          <div className={styles.experienceHeader}><h3>Oak &amp; Luna</h3><span>VIDEO PREVIEW</span></div>
           <p>Same approved TheoGrace experience, with Oak &amp; Luna logo and gift packaging, and without the Nicky Hilton scene.</p>
-          <div className={styles.experiencePlaceholder}><span>✧</span><strong>Oak &amp; Luna Christmas experience</strong><small>Video / interactive preview coming soon</small></div>
-          <div className={styles.experiencePending}>Placeholder only — no unvalidated video displayed.</div>
+          <video className={styles.experienceFrame} controls playsInline preload="metadata" src="/videos/oak-luna-preview.mp4" aria-label="Oak and Luna Christmas video preview" />
+          <a className={styles.experienceLink} href="/videos/oak-luna-preview.mp4" target="_blank" rel="noopener noreferrer">Open Oak &amp; Luna MP4 ↗</a>
+          <div className={styles.experiencePending}>Working preview for the meeting — final validation pending.</div>
         </article>
       </div>
     </section>
@@ -358,16 +365,9 @@ export default function StrategyClient(){
       </div>
     </section>
 
-    <section className={styles.section}>
-      <div className={styles.sectionHeading}><span>07</span><div><h2>Customer communication playbook</h2><p>Actual customer-care templates · original wording retained · select a scenario to preview the email.</p></div></div>
-      <div className={styles.emailTabs}>{emailTemplates.map((item,i)=><button key={i} className={emailTemplate===i?styles.emailSelected:''} onClick={()=>setEmailTemplate(i)}>{item.label}</button>)}</div>
-      <div className={styles.emailPreview}><div className={styles.emailMeta}><strong>{emailTemplates[emailTemplate].label}</strong><span>{emailTemplates[emailTemplate].trigger}</span></div><div className={styles.emailText}>{emailTemplates[emailTemplate].body}</div></div>
-      <p className={styles.emailFootnote}>The customer variables and product-photo placeholder remain unchanged. The final links, brand videos and compensation landing pages will be added later.</p>
-    </section>
-
     <section className={styles.sectionAlt}>
       <div className={styles.sectionHeading}>
-        <span>08</span><div><h2>Communication architecture</h2><p>Customer email templates are included. TheoGrace validated experience is linked above; Oak & Luna is in progress.</p></div>
+        <span>07</span><div><h2>Communication architecture</h2><p>Customer email templates are now displayed within the relevant decision framework scenarios. TheoGrace validated experience is linked above; Oak & Luna is in progress.</p></div>
       </div>
       <div className={styles.assetGrid}>
         <div className={styles.assetCard}>
@@ -377,8 +377,8 @@ export default function StrategyClient(){
         </div>
         <div className={styles.assetCard}>
           <div className={styles.assetIcon}>▶</div><h3>Christmas videos</h3>
-          <p>TheoGrace validated interactive experience linked above. Oak &amp; Luna placeholder in progress; MYKA pending.</p>
-          <span>THEOGRACE LIVE · OAK &amp; LUNA IN PROGRESS</span>
+          <p>TheoGrace validated interactive experience linked above. Oak &amp; Luna video preview embedded; MYKA pending.</p>
+          <span>THEOGRACE LIVE · OAK &amp; LUNA VIDEO PREVIEW</span>
         </div>
         <div className={styles.assetCard}>
           <div className={styles.assetIcon}>🎁</div><h3>Compensation products</h3>

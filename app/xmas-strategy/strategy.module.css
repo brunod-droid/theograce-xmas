@@ -78,3 +78,5 @@
 .experiencePlaceholder span{font-size:50px;color:#c5a878}.experiencePlaceholder strong{font:400 25px Georgia,serif}.experiencePlaceholder small{font-size:12px;color:#d7cbb8}
 .experiencePending{font-size:12px;color:#63707b;margin-top:16px}
 @media(max-width:780px){.experienceGrid{grid-template-columns:1fr}.experienceFrame,.experiencePlaceholder{height:440px}}
+
+.inlineEmailBlock{margin-top:16px;max-width:100%;width:100%;}.inlineEmailBlock .emailPreview{margin-top:10px}.inlineEmailBlock .emailText{max-height:440px;overflow:auto;text-align:left}.inlineEmailBlock .emailMeta{text-align:left}
