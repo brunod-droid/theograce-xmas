@@ -1,0 +1,1 @@
+Oak & Luna first pass: separate /oak-luna route, original TheoGrace gift component unchanged. Changes: logo, packaging, Nicky segment removed; remaining ending occupies 39–55.1 seconds. Demo names Alex/Fiona and initials A/M/J/S. Packaging source is a crop of the previously approved MP4 preview; replace with original high-resolution packaging image when available.

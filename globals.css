@@ -1,0 +1,274 @@
+:root{
+  --tg-blue:#082f5d;
+  --tg-blue-deep:#031a35;
+  --tg-blue-mid:#0d477f;
+  --tg-gold:#d9b36a;
+  --tg-gold-light:#f2d79e;
+  --tg-cream:#fff9ef;
+  --tg-paper:#f8f0e3;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--tg-blue-deep);font-family:Arial,Helvetica,sans-serif}
+button{font:inherit}
+.home{max-width:680px;margin:80px auto;padding:30px;background:#fff;color:#172019;border-radius:24px}
+.brand{font-family:Georgia,serif;color:#0d2a1d;font-size:28px}
+code{display:inline-block;background:#eee5d7;padding:8px 10px;border-radius:8px}
+.page{min-height:100vh;padding:18px;display:flex;align-items:center;justify-content:center;background:#efe6d8;color:#192019}
+.error{max-width:560px;background:white;padding:30px;border-radius:18px}
+
+.tgExperience{min-height:100svh;width:100%;background:var(--tg-blue-deep);color:var(--tg-cream);overflow:hidden}
+.tgOfficialLogo{display:block;width:154px;height:auto}
+.tgOfficialLogoLight{filter:brightness(0) invert(1);opacity:.96}
+.tgEyebrow{font-size:10px;letter-spacing:3.4px;font-weight:700;color:var(--tg-gold);margin-bottom:20px;text-transform:uppercase}
+
+.tgOpening{min-height:100svh;position:relative;display:flex;justify-content:center;overflow:hidden;background:
+radial-gradient(circle at 80% 18%,rgba(255,217,145,.23),transparent 14%),
+radial-gradient(circle at 18% 72%,rgba(255,222,158,.12),transparent 18%),
+linear-gradient(150deg,#0e477c 0%,var(--tg-blue) 40%,var(--tg-blue-deep) 100%)}
+.tgOpening:before{content:"";position:absolute;inset:0;background:
+linear-gradient(180deg,rgba(255,255,255,.03),transparent 30%),
+radial-gradient(circle at 50% 110%,rgba(217,179,106,.16),transparent 35%);pointer-events:none}
+.tgOpeningGlow{position:absolute;width:360px;height:360px;border-radius:50%;background:rgba(217,179,106,.09);filter:blur(55px);right:-150px;top:9%}
+.tgOpening>.tgOfficialLogo{position:absolute;z-index:3;top:max(28px,env(safe-area-inset-top));left:50%;transform:translateX(-50%)}
+.tgOpeningContent{width:min(100%,480px);min-height:100svh;padding:130px 28px 48px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;z-index:2}
+.tgOpening h1,.tgOpening p,.tgStory h2,.tgStory p,.tgStory blockquote{font-family:Georgia,'Times New Roman',serif}
+.tgOpening h1{font-size:clamp(50px,15vw,70px);font-weight:400;font-style:italic;line-height:.95;margin:0 0 25px;text-shadow:0 12px 40px rgba(0,0,0,.24)}
+.tgOpeningHeadline{font-size:clamp(24px,7vw,31px);line-height:1.22;margin:0 0 10px}
+.tgOpeningSub{font-size:18px;line-height:1.45;color:#e8edf3;margin:0;max-width:340px}
+.tgGiftVisual{width:176px;height:116px;margin:34px auto 30px;position:relative;border-radius:15px;background:linear-gradient(145deg,#0b3c70,#021b38);border:1px solid rgba(242,215,158,.55);box-shadow:0 28px 55px rgba(0,0,0,.35),inset 0 0 35px rgba(255,255,255,.035)}
+.tgGiftVisual:before{content:"";position:absolute;left:-9px;right:-9px;top:-17px;height:31px;background:linear-gradient(#15558c,#062a52);border-radius:11px;border:1px solid rgba(242,215,158,.5)}
+.tgGiftVisual .tgRibbonV{position:absolute;width:24px;top:-17px;bottom:0;left:76px;background:linear-gradient(90deg,#c89d50,#f4d9a0,#b8873c)}
+.tgGiftVisual .tgRibbonH{position:absolute;left:-9px;right:-9px;height:19px;top:24px;background:linear-gradient(#c99e52,#e6bf75)}
+.tgGiftVisual b{position:absolute;right:-26px;top:-38px;color:var(--tg-gold-light);font-size:35px;text-shadow:0 0 20px rgba(255,225,163,.7)}
+.tgOpenButton{border:0;background:linear-gradient(135deg,#f2d79e,#d9b36a);color:#10233c;border-radius:999px;padding:17px 23px;min-width:290px;font-weight:700;box-shadow:0 14px 35px rgba(0,0,0,.2)}
+.tgOpenButton span{margin-left:10px}
+.tgSoundHint{margin-top:13px;font-size:11px;letter-spacing:1.3px;color:#c9d4df}
+.tgSnow i{position:absolute;width:4px;height:4px;border-radius:50%;background:white;opacity:.55;animation:tgSnow 8s linear infinite}
+.tgSnow i:nth-child(1){left:12%;top:-5%;animation-delay:0s}.tgSnow i:nth-child(2){left:32%;top:-10%;animation-delay:1.4s}.tgSnow i:nth-child(3){left:54%;top:-8%;animation-delay:3s}.tgSnow i:nth-child(4){left:72%;top:-12%;animation-delay:4.2s}.tgSnow i:nth-child(5){left:88%;top:-6%;animation-delay:5.6s}.tgSnow i:nth-child(6){left:43%;top:-10%;animation-delay:6.5s}
+@keyframes tgSnow{to{transform:translateY(115svh) translateX(25px);opacity:.08}}
+
+.tgStory{min-height:100svh;position:relative;display:flex;justify-content:center;overflow:hidden;background:var(--tg-blue-deep);cursor:pointer}
+.tgStoryBg{position:absolute;inset:0;background:
+radial-gradient(circle at 83% 21%,rgba(245,205,127,.16),transparent 16%),
+radial-gradient(circle at 11% 72%,rgba(80,150,210,.13),transparent 22%),
+linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
+.tgStoryBg:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.15) 1px,transparent 1px);background-size:38px 38px;opacity:.12;mask-image:linear-gradient(to bottom,black,transparent 65%)}
+.tgStoryTop{position:absolute;z-index:4;left:22px;right:22px;top:max(18px,env(safe-area-inset-top));height:74px;display:flex;align-items:flex-end;justify-content:center}
+.tgStoryTop .tgOfficialLogo{width:144px;margin-bottom:4px}
+.tgAudioButton{position:absolute;right:0;bottom:0;width:35px;height:35px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(0,0,0,.15);color:white}
+.tgBars{position:absolute;top:0;left:0;right:0;height:3px;display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+.tgBars span{background:rgba(255,255,255,.22);border-radius:999px;overflow:hidden}.tgBars b{display:block;height:100%;background:white;border-radius:999px}
+.tgScene{position:relative;z-index:3;width:min(100%,480px);min-height:100svh;padding:125px 28px 70px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;animation:tgSceneIn .85s cubic-bezier(.2,.8,.2,1) both}
+@keyframes tgSceneIn{from{opacity:0;transform:translateY(12px) scale(.99);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+.tgStory h2{font-size:clamp(31px,9vw,45px);line-height:1.08;font-weight:400;margin:0 0 22px;max-width:410px;text-shadow:0 10px 35px rgba(0,0,0,.24)}
+.tgStory p{font-size:18px;line-height:1.55;color:#e7edf5;margin:0;max-width:370px}
+.tgStory em{font-weight:400;color:var(--tg-gold-light)}
+.tgSpark{color:var(--tg-gold-light);font-size:48px;margin-bottom:22px;text-shadow:0 0 27px rgba(242,215,158,.55);animation:tgPulse 2.2s ease-in-out infinite}
+.tgFinalSpark{font-size:58px}@keyframes tgPulse{50%{transform:scale(1.12);opacity:.72}}
+.tgGoldRule{width:62px;height:1px;background:var(--tg-gold);margin:27px auto}
+.tgGoldText{color:var(--tg-gold-light)!important;font-style:italic}
+.tgFine{font-size:13px!important;color:#cbd6e1!important;margin-top:20px!important}
+
+.tgMiniGift{width:182px;height:112px;margin-top:34px;position:relative;background:linear-gradient(145deg,#0b3f75,#042243);border:1px solid rgba(217,179,106,.5);border-radius:13px;box-shadow:0 22px 45px rgba(0,0,0,.25)}
+.tgMiniGift span{position:absolute;left:77px;top:0;bottom:0;width:28px;background:linear-gradient(90deg,#ba8e45,#eed195,#b9873c)}
+.tgMiniGift b{position:absolute;right:-15px;bottom:-16px;background:#f5ead9;color:#21304a;padding:11px 15px;font-family:'Bradley Hand','Segoe Print',cursive;font-size:15px;font-weight:400;transform:rotate(-4deg);box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.tgMagicBox{width:220px;height:135px;margin-top:40px;position:relative;border-radius:16px;background:#06294f;border:1px solid rgba(217,179,106,.5);box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.tgMagicBox div{position:absolute;left:-4px;right:-4px;top:-8px;height:30px;background:#0c477d;border:1px solid rgba(217,179,106,.55);border-radius:10px;transform:rotate(-8deg) translateY(-19px);transform-origin:left center}
+.tgMagicBox span{position:absolute;font-size:70px;color:var(--tg-gold-light);left:76px;top:-46px;text-shadow:0 0 40px rgba(242,215,158,.7)}
+
+.tgClueStack,.tgRevealStack{width:100%;display:grid;gap:11px;margin-top:20px}
+.tgClue{min-height:64px;border:1px solid rgba(217,179,106,.34);background:rgba(4,24,49,.38);backdrop-filter:blur(10px);border-radius:14px;padding:13px 16px;display:flex;align-items:center;text-align:left;box-shadow:inset 0 1px rgba(255,255,255,.04)}
+.tgClue small{width:55px;color:var(--tg-gold);font-size:9px;letter-spacing:1.7px}.tgClue strong{font-family:Georgia,serif;font-weight:400;font-size:21px;letter-spacing:4px}
+.tgConstellation{font-family:Georgia,serif;font-size:48px;color:var(--tg-gold-light);margin-top:36px;letter-spacing:7px}.tgConstellation span{opacity:.45}
+.tgNameplate{min-height:62px;border-radius:10px;background:linear-gradient(180deg,#f4ddb0,#d3a654);border:1px solid #f6e6c4;color:#4a3216;display:flex;align-items:center;justify-content:center;box-shadow:0 9px 25px rgba(0,0,0,.24),inset 0 2px rgba(255,255,255,.48)}
+.tgNameplate span{font-family:Georgia,serif;font-size:20px;letter-spacing:1.4px;text-transform:uppercase}
+
+.tgNickyCard{width:100%;max-width:380px;display:flex;flex-direction:column;align-items:center;position:relative}
+.tgNickyPhotoWrap{width:72%;aspect-ratio:1/1;border:10px solid #f7efe2;border-bottom-width:28px;transform:rotate(-2deg);box-shadow:0 20px 45px rgba(0,0,0,.35);background:white;z-index:1}
+.tgNickyPhotoWrap img{width:100%;height:100%;object-fit:cover;display:block}
+.tgNickyPaper{width:92%;margin-top:-14px;background:#f8f0e3;color:#25324a;padding:31px 25px 22px;transform:rotate(1.8deg);box-shadow:0 20px 50px rgba(0,0,0,.28);position:relative}
+.tgHandwritten{font-family:'Bradley Hand','Segoe Print','Comic Sans MS',cursive;font-size:19px;line-height:1.35;text-align:left;color:#22334f}
+.tgNickyName{font-family:'Bradley Hand','Segoe Print',cursive;font-size:27px;text-align:right;margin-top:10px;color:#0c2f5b}
+.tgNickyRole{text-align:right;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#7a6e60;margin-top:3px}
+
+.tgStory blockquote{margin:26px 0 0;padding:16px 18px;border-top:1px solid rgba(217,179,106,.32);border-bottom:1px solid rgba(217,179,106,.32);font-size:16px;line-height:1.5;font-style:italic;color:#f5ead9;max-width:380px}
+.tgReplay{margin-top:28px;border:1px solid var(--tg-gold-light);background:linear-gradient(135deg,#f2d79e,#d9b36a);color:#10233c;border-radius:999px;padding:15px 22px;font-weight:700;min-width:260px}
+.tgFinalNote{font-size:11px;letter-spacing:1.4px;color:#c7d2dd;margin-top:15px}
+.tgTapHint{position:absolute;z-index:5;bottom:max(18px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,.55);pointer-events:none}
+
+@media(min-width:600px){.tgExperience{padding:24px;background:#07192f}.tgOpening,.tgStory{width:430px;min-height:860px;height:min(900px,calc(100vh - 48px));margin:auto;border-radius:36px;border:1px solid rgba(217,179,106,.24);box-shadow:0 32px 90px rgba(0,0,0,.55)}.tgOpeningContent,.tgScene{min-height:100%}}
+@media(max-height:700px){.tgOpeningContent{padding-top:105px}.tgStoryTop{height:60px}.tgScene{padding-top:105px}.tgStory h2{font-size:29px}.tgStory p{font-size:16px}.tgClue{min-height:52px}.tgNameplate{min-height:51px}.tgNickyPhotoWrap{width:54%}.tgNickyPaper{padding:22px}.tgHandwritten{font-size:16px}}
+
+
+/* v4: cinematic photographic layers derived from the approved design direction. */
+.tgPhotoAtmosphere{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background-size:cover;
+  background-position:center;
+  opacity:.42;
+  filter:saturate(.9) contrast(1.06);
+  transform:scale(1.03);
+}
+.tgPhotoAtmosphere:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(3,26,53,.22) 0%,rgba(3,26,53,.5) 55%,rgba(3,26,53,.92) 100%),
+    radial-gradient(circle at 50% 35%,transparent 0%,rgba(3,26,53,.4) 80%);
+}
+.tgPhotoGift{background-image:url('/scene-gift.jpg')}
+.tgPhotoMagic{background-image:url('/scene-magic.jpg')}
+.tgPhotoNYC{background-image:url('/scene-nyc.jpg')}
+
+.tgStoryBg0,.tgStoryBg1,.tgStoryBg5{
+  background:linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%);
+}
+.tgScene{isolation:isolate}
+.tgScene > *:not(.tgPhotoAtmosphere){position:relative;z-index:1}
+
+.tgOpening:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:32%;
+  background:
+    linear-gradient(180deg,transparent,rgba(3,26,53,.5)),
+    url('/scene-gift.jpg') center 68% / cover no-repeat;
+  opacity:.30;
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+
+.tgNickyPhotoWrap{
+  width:78%;
+  aspect-ratio:1/1.08;
+}
+.tgNickyPhotoWrap img{
+  object-position:center 20%;
+}
+.tgNickyPaper{
+  border:1px solid rgba(217,179,106,.25);
+}
+.tgNickyRole:before{
+  content:"A HOLIDAY NOTE";
+  display:block;
+  margin-bottom:5px;
+  color:#9b7c47;
+  letter-spacing:2.6px;
+}
+
+@media(max-width:560px){
+  .tgPhotoAtmosphere{opacity:.48}
+}
+
+/* v7 — product-safe universal storytelling */
+.tgRealPackaging{width:min(72vw,330px);height:220px;margin:18px auto 16px;background:url('/theograce-packaging.png') center/contain no-repeat;filter:drop-shadow(0 20px 32px rgba(0,0,0,.22))}
+.tgPackagingAtmosphere{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(3,26,53,.25),rgba(3,26,53,.88)),url('/theograce-packaging.png') center 58%/72% auto no-repeat;opacity:.52;filter:saturate(.9)}
+.tgPackagingAtmosphere.soft{opacity:.3;filter:blur(1px) saturate(.8)}
+.tgGiftTag{margin:24px auto 0;padding:12px 22px;background:#f5ead9;color:#102e4d;font-family:cursive;font-size:25px;transform:rotate(-2deg);box-shadow:0 12px 30px rgba(0,0,0,.18);width:max-content;max-width:80%}
+.tgRevealWords{display:flex;flex-direction:column;gap:10px;width:min(86%,390px);margin:20px auto}.tgRevealWord{padding:13px 18px;border-top:1px solid rgba(217,179,106,.65);border-bottom:1px solid rgba(217,179,106,.3);font-family:Georgia,serif;font-size:clamp(25px,7vw,36px);letter-spacing:.08em;color:#f2d49c;background:linear-gradient(90deg,transparent,rgba(217,179,106,.08),transparent)}
+.tgMemoryOrb{font-size:58px;color:#e0bb75;margin:35px auto;text-shadow:0 0 30px rgba(224,187,117,.6)}
+.tgHandwritten{font-family:'Segoe Print','Bradley Hand','Comic Sans MS',cursive!important;font-size:clamp(18px,4.8vw,24px)!important;line-height:1.45!important;transform:rotate(-1.2deg)}
+.tgNickySignature{font-family:'Segoe Script','Bradley Hand',cursive;font-size:38px;color:#153657;text-align:right;margin:6px 8px -3px 0;transform:rotate(-5deg)}
+.tgEtaTitle{font-size:24px!important;margin-bottom:5px!important}.tgEta{font-family:Georgia,serif;font-size:clamp(42px,12vw,64px);color:#f3d79e;margin:6px 0 20px}.tgCoupon{margin:0 auto 18px;width:min(86%,380px);padding:18px;border:1px solid rgba(226,190,121,.65);background:rgba(3,26,53,.52);display:flex;flex-direction:column;gap:4px}.tgCoupon small{letter-spacing:.13em;text-transform:uppercase}.tgCoupon strong{font-family:Georgia,serif;font-size:34px;color:#f3d79e}.tgCoupon span{text-transform:uppercase;letter-spacing:.1em;font-size:12px}.tgCoupon code{margin:10px auto 0;padding:9px 28px;background:#f7f1e7;color:#082f5d;font-family:Georgia,serif;font-size:20px;letter-spacing:.12em;border-radius:3px}
+
+
+/* v7.1 — stable polish: same flow, warmer Christmas, handwritten Nicky, refined final */
+.tgOpening:before,.tgStoryBg:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 18%,rgba(255,210,120,.58) 0 2px,rgba(255,210,120,.18) 3px 8px,transparent 18px),radial-gradient(circle at 88% 13%,rgba(255,231,171,.58) 0 3px,rgba(255,210,120,.16) 4px 11px,transparent 22px),radial-gradient(circle at 81% 61%,rgba(255,198,88,.42) 0 3px,rgba(255,198,88,.12) 4px 10px,transparent 22px),radial-gradient(circle at 14% 77%,rgba(255,226,160,.35) 0 2px,rgba(255,226,160,.10) 3px 9px,transparent 20px);filter:blur(.35px);opacity:.78}
+.tgStoryBg{background:radial-gradient(circle at 82% 17%,rgba(245,196,103,.23),transparent 18%),radial-gradient(circle at 14% 76%,rgba(238,184,79,.13),transparent 22%),radial-gradient(circle at 48% 108%,rgba(217,179,106,.13),transparent 34%),linear-gradient(160deg,#104c80 0%,#082f5d 38%,#02172f 100%)}
+.tgStoryBg:after{opacity:.18;background-image:radial-gradient(rgba(255,255,255,.17) 1px,transparent 1.4px),radial-gradient(rgba(242,215,158,.22) 1px,transparent 1.6px);background-size:43px 43px,71px 71px;background-position:0 0,21px 18px}
+.tgScene{animation-duration:1.05s}.tgPackagingAtmosphere{opacity:.60;background:linear-gradient(180deg,rgba(3,26,53,.14),rgba(3,26,53,.82)),radial-gradient(circle at 50% 58%,rgba(244,205,127,.18),transparent 32%),url('/theograce-packaging.png') center 58%/76% auto no-repeat}.tgPackagingAtmosphere.soft{opacity:.39;filter:saturate(.92)}
+.tgRealPackaging{filter:drop-shadow(0 24px 38px rgba(0,0,0,.30)) drop-shadow(0 0 28px rgba(242,215,158,.10))}.tgEyebrow{color:#e5bd73}.tgGoldRule{box-shadow:0 0 16px rgba(242,215,158,.28)}
+.tgClue{background:linear-gradient(135deg,rgba(5,34,66,.54),rgba(3,24,49,.32));border-color:rgba(226,190,121,.42);box-shadow:inset 0 1px rgba(255,255,255,.05),0 12px 34px rgba(0,0,0,.12)}.tgRevealWord{text-shadow:0 0 25px rgba(242,215,158,.12)}
+.tgNickyCard:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(239,192,96,.18),transparent 67%);filter:blur(12px);top:7%;left:50%;transform:translateX(-50%)}
+.tgNickyPhotoWrap{transform:rotate(-3.2deg);border-color:#fbf4e9;box-shadow:0 24px 55px rgba(0,0,0,.38)}
+.tgNickyPaper{width:94%;margin-top:-19px;padding:34px 27px 25px;transform:rotate(1.4deg);background:linear-gradient(rgba(248,240,227,.96),rgba(248,240,227,.96)),repeating-linear-gradient(0deg,transparent 0 27px,rgba(40,55,75,.045) 28px);border:1px solid rgba(217,179,106,.30);box-shadow:0 25px 60px rgba(0,0,0,.30)}
+.tgHandwritten{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive!important;font-size:clamp(17px,4.5vw,22px)!important;line-height:1.48!important;letter-spacing:.01em;color:#25344b!important;transform:rotate(-.7deg)}
+.tgNickySignature{font-family:"Segoe Script","Bradley Hand","Comic Sans MS",cursive;font-size:42px;margin-top:10px;color:#12395f;transform:rotate(-6deg)}.tgNickyName{display:none}
+.tgFinalGiftMark{font-family:Georgia,serif;font-size:36px;color:#f2d79e;margin-bottom:13px;text-shadow:0 0 22px rgba(242,215,158,.38)}
+.tgEtaTitle{font-size:22px!important;margin:0!important;color:#f5ead9!important}.tgEta{margin:8px 0 13px;font-size:clamp(44px,12vw,62px);text-shadow:0 0 26px rgba(242,215,158,.13)}
+.tgFinalDivider{width:min(70%,260px);display:flex;align-items:center;gap:10px;margin:3px auto 14px;color:#d9b36a}.tgFinalDivider:before,.tgFinalDivider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(217,179,106,.72))}.tgFinalDivider:after{transform:scaleX(-1)}.tgFinalDivider span{font-size:13px}
+.tgCoupon{width:min(88%,380px);padding:20px 18px 18px;border:1px solid rgba(226,190,121,.52);border-radius:16px;background:radial-gradient(circle at 50% 0,rgba(217,179,106,.12),transparent 45%),rgba(2,20,42,.46);box-shadow:0 18px 45px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.035)}.tgCoupon code{border-radius:999px;padding:10px 30px;box-shadow:0 8px 22px rgba(0,0,0,.12)}.tgReplay{margin-top:20px}
+
+
+/* v7.2 — Christmas + jewelry atmosphere, same stable story */
+.tgSnowField{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.tgSnowField i{--x:50%;--d:9s;--delay:0s;--size:5px;--drift:18px;position:absolute;top:-8%;left:var(--x);width:var(--size);height:var(--size);border-radius:50%;background:rgba(255,255,255,.88);box-shadow:0 0 8px rgba(255,255,255,.45);animation:tgSnowFall var(--d) linear var(--delay) infinite}
+.tgSnowField i:nth-child(1){--x:5%;--d:9s;--delay:-2s;--size:3px;--drift:14px}.tgSnowField i:nth-child(2){--x:12%;--d:12s;--delay:-8s;--size:5px;--drift:-12px}.tgSnowField i:nth-child(3){--x:19%;--d:10s;--delay:-5s;--size:3px;--drift:24px}.tgSnowField i:nth-child(4){--x:27%;--d:13s;--delay:-9s;--size:6px;--drift:-18px}.tgSnowField i:nth-child(5){--x:34%;--d:11s;--delay:-4s;--size:4px;--drift:11px}.tgSnowField i:nth-child(6){--x:42%;--d:14s;--delay:-12s;--size:3px;--drift:25px}.tgSnowField i:nth-child(7){--x:49%;--d:9s;--delay:-6s;--size:5px;--drift:-20px}.tgSnowField i:nth-child(8){--x:57%;--d:12s;--delay:-3s;--size:4px;--drift:17px}.tgSnowField i:nth-child(9){--x:64%;--d:10s;--delay:-8s;--size:6px;--drift:-15px}.tgSnowField i:nth-child(10){--x:71%;--d:15s;--delay:-11s;--size:3px;--drift:21px}.tgSnowField i:nth-child(11){--x:78%;--d:11s;--delay:-5s;--size:5px;--drift:-23px}.tgSnowField i:nth-child(12){--x:85%;--d:13s;--delay:-7s;--size:4px;--drift:13px}.tgSnowField i:nth-child(13){--x:92%;--d:10s;--delay:-1s;--size:3px;--drift:-11px}.tgSnowField i:nth-child(14){--x:8%;--d:16s;--delay:-10s;--size:4px;--drift:20px}.tgSnowField i:nth-child(15){--x:24%;--d:12s;--delay:-2s;--size:3px;--drift:-18px}.tgSnowField i:nth-child(16){--x:38%;--d:15s;--delay:-6s;--size:5px;--drift:12px}.tgSnowField i:nth-child(17){--x:54%;--d:13s;--delay:-4s;--size:3px;--drift:-22px}.tgSnowField i:nth-child(18){--x:69%;--d:17s;--delay:-13s;--size:4px;--drift:18px}.tgSnowField i:nth-child(19){--x:82%;--d:12s;--delay:-9s;--size:3px;--drift:-14px}.tgSnowField i:nth-child(20){--x:96%;--d:15s;--delay:-7s;--size:5px;--drift:16px}.tgSnowField i:nth-child(21){--x:31%;--d:18s;--delay:-15s;--size:3px;--drift:-20px}.tgSnowField i:nth-child(22){--x:61%;--d:14s;--delay:-8s;--size:4px;--drift:24px}.tgSnowField i:nth-child(23){--x:74%;--d:16s;--delay:-3s;--size:3px;--drift:-16px}.tgSnowField i:nth-child(24){--x:16%;--d:14s;--delay:-12s;--size:4px;--drift:17px}
+@keyframes tgSnowFall{0%{transform:translate3d(0,-12%,0) rotate(0);opacity:0}8%{opacity:.9}92%{opacity:.72}100%{transform:translate3d(var(--drift),112svh,0) rotate(240deg);opacity:0}}
+.tgSnowStory{opacity:.52}.tgSnowStory.subtle{opacity:.16}
+.tgOpening{background:radial-gradient(circle at 14% 18%,rgba(255,198,86,.28),transparent 16%),radial-gradient(circle at 88% 26%,rgba(255,225,157,.20),transparent 18%),radial-gradient(circle at 18% 78%,rgba(255,184,60,.13),transparent 20%),linear-gradient(150deg,#124f83 0%,#082f5d 42%,#02172f 100%)!important}
+.tgOpening:after{opacity:.42!important;mix-blend-mode:screen;filter:saturate(1.05) brightness(1.08)}
+.tgOpeningGlow{background:rgba(240,192,95,.16)!important;filter:blur(48px)!important}
+.tgStoryBg{background:radial-gradient(circle at 16% 16%,rgba(247,194,91,.20),transparent 18%),radial-gradient(circle at 88% 22%,rgba(255,226,165,.16),transparent 19%),radial-gradient(circle at 50% 110%,rgba(218,166,71,.17),transparent 34%),linear-gradient(155deg,#104b7f 0%,#082e59 40%,#02162d 100%)!important}
+.tgRealPackaging{background-image:url('/theograce-packaging-transparent.png')!important;width:min(76vw,350px)!important;height:235px!important;filter:drop-shadow(0 26px 40px rgba(0,0,0,.28)) drop-shadow(0 0 32px rgba(242,215,158,.12))!important}
+.tgPackagingAtmosphere{background:linear-gradient(180deg,rgba(3,26,53,.16),rgba(3,26,53,.86)),radial-gradient(circle at 50% 58%,rgba(242,202,124,.22),transparent 33%),url('/theograce-packaging-transparent.png') center 58%/76% auto no-repeat!important;filter:saturate(.98)!important}
+.tgPackagingAtmosphere.soft{opacity:.36!important;filter:saturate(.9)!important}
+.tgJewelryWhisper{margin-top:14px;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:14px;letter-spacing:.05em;color:#f2d79e;text-shadow:0 0 20px rgba(242,215,158,.18)}
+.tgJewelryMood{position:relative;width:min(80%,330px);height:88px;margin:22px auto -3px;opacity:.9}.tgJewelryMood.compact{height:68px;margin-top:17px}
+.tgJewelryMood .chain{position:absolute;left:8%;right:8%;top:43%;height:2px;background:linear-gradient(90deg,transparent,#b98d45 15%,#f0d49a 50%,#b98d45 85%,transparent);filter:drop-shadow(0 0 6px rgba(240,212,154,.22))}
+.tgJewelryMood .chain:before,.tgJewelryMood .chain:after{content:'';position:absolute;top:-10px;width:20px;height:20px;border-radius:50%;border:2px solid #d3ab62;background:rgba(4,30,58,.3)}
+.tgJewelryMood .chain:before{left:29%}.tgJewelryMood .chain:after{right:29%}
+.tgJewelryMood .spark{position:absolute;color:#f1d18c;font-size:21px;text-shadow:0 0 16px rgba(241,209,140,.55);animation:tgJewelryTwinkle 1.8s ease-in-out infinite alternate}.tgJewelryMood .s1{left:9%;top:3%}.tgJewelryMood .s2{right:14%;top:17%;animation-delay:.45s}.tgJewelryMood .s3{left:48%;bottom:0;animation-delay:.9s}
+@keyframes tgJewelryTwinkle{to{transform:scale(1.28) rotate(10deg);opacity:.58}}
+.tgClueStack{position:relative}.tgClueStack:before{content:'✦';position:absolute;left:-6px;top:-22px;color:#e8bd70;font-size:20px;text-shadow:0 0 18px rgba(232,189,112,.45)}.tgClueStack:after{content:'✧';position:absolute;right:-3px;bottom:-21px;color:#f2d79e;font-size:24px;text-shadow:0 0 18px rgba(242,215,158,.45)}
+.tgRevealWords:before{content:'A piece of jewelry made personal';display:block;margin-bottom:13px;font:italic 13px Georgia,serif;letter-spacing:.09em;color:#d8b56f}
+.tgRevealWord{background:linear-gradient(90deg,transparent,rgba(217,179,106,.11),transparent)!important;border-top-color:rgba(242,215,158,.72)!important;text-shadow:0 0 24px rgba(242,215,158,.18)!important}
+.tgNickyCard:after{content:'✦';position:absolute;right:5%;top:9%;color:#f0ca7d;font-size:26px;text-shadow:0 0 20px rgba(240,202,125,.55)}
+.tgCoupon{box-shadow:0 18px 45px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.035),0 0 30px rgba(217,179,106,.07)!important}
+@media(prefers-reduced-motion:reduce){.tgSnowField i,.tgJewelryMood .spark{animation:none}.tgSnowField{opacity:.16}}
+
+/* v7.3 emotional polish */
+.tgMadeSlowly{margin-top:7px;font:600 10px/1.3 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,244,219,.72)}
+.tgJewelryLight{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.tgJewelryLight i{position:absolute;width:1px;height:34vh;top:-12vh;background:linear-gradient(180deg,transparent,rgba(255,229,171,.38),transparent);opacity:.2;transform:rotate(32deg);animation:tgJewelrySweep 8s ease-in-out infinite}
+.tgJewelryLight i:nth-child(1){left:18%;animation-delay:-1s}.tgJewelryLight i:nth-child(2){left:54%;height:26vh;opacity:.12;animation-delay:-5s}.tgJewelryLight i:nth-child(3){left:83%;height:22vh;opacity:.16;animation-delay:-3s}
+@keyframes tgJewelrySweep{0%,72%{transform:translate3d(-15vw,-10vh,0) rotate(32deg);opacity:0}78%{opacity:.28}100%{transform:translate3d(24vw,105vh,0) rotate(32deg);opacity:0}}
+.tgRevealIntro{max-width:320px;margin:0 auto 14px;font:italic 14px/1.45 Georgia,serif;color:#ead7b3}
+.tgRevealWord{opacity:0;transform:translateY(10px);animation:tgEngraveIn .9s cubic-bezier(.2,.7,.2,1) forwards}
+.tgRevealWord:nth-child(1){animation-delay:.12s}.tgRevealWord:nth-child(2){animation-delay:.55s}.tgRevealWord:nth-child(3){animation-delay:.98s}.tgRevealWord:nth-child(4){animation-delay:1.41s}.tgRevealWord:nth-child(5){animation-delay:1.84s}.tgRevealWord:nth-child(6){animation-delay:2.27s}
+@keyframes tgEngraveIn{0%{opacity:0;transform:translateY(10px);filter:blur(3px)}55%{opacity:.72;filter:blur(0);text-shadow:0 0 20px rgba(244,213,148,.58)}100%{opacity:1;transform:none;filter:none}}
+.tgEmotionalEnding{width:min(88%,370px);margin:18px auto 0;padding:20px 12px 0;border-top:1px solid rgba(226,190,121,.38);display:flex;flex-direction:column;align-items:center;gap:9px}
+.tgEmotionalEnding strong{font:italic 24px/1.18 Georgia,serif;color:#f4ddb0}.tgEmotionalEnding span{font:400 16px/1.3 Georgia,serif;color:#fff8eb}
+.tgCoupon{display:none!important}
+@media(prefers-reduced-motion:reduce){.tgJewelryLight i,.tgRevealWord{animation:none!important}.tgRevealWord{opacity:1;transform:none;filter:none}}
+
+/* Oak & Luna: isolated brand and packaging overrides. TheoGrace is untouched. */
+.oakLuna .tgOfficialLogo{width:190px;object-fit:contain}
+.oakLuna .tgStoryTop .tgOfficialLogo{width:180px}
+.oakLuna .tgRealPackaging{background-image:url('/oak-luna-packaging.png')!important;width:min(76vw,350px)!important;height:235px!important;background-size:contain!important}
+
+/* Independent 15-second Christmas experiences */
+.shortXmas{position:relative;min-height:100dvh;overflow:hidden;display:flex;flex-direction:column;align-items:center;color:#fff;text-align:center;background:radial-gradient(ellipse at 50% 20%,#a43b3e 0%,#7c1d2c 43%,#350c1a 100%);font-family:Georgia,serif;padding:24px 18px 34px;isolation:isolate}
+.shortOak{background:radial-gradient(ellipse at 50% 20%,#4e5960 0%,#25333a 50%,#101c25 100%)}
+.shortXmas:before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 50% 45%,rgba(255,232,187,.16),transparent 55%)}
+.shortTop{width:min(100%,420px);display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:2}
+.shortTop img{width:150px;max-height:65px;object-fit:contain;filter:brightness(0) invert(1)}
+.shortOak .shortTop img{width:178px}
+.shortTop span{font:10px Arial,sans-serif;letter-spacing:2px;color:#f3e5cf}
+.shortContent{width:min(100%,450px);margin:auto;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:16px;animation:shortIn .7s ease both;min-height:440px;z-index:2}
+.shortKicker{font:11px Arial,sans-serif;letter-spacing:3px;color:#ead7b3;margin:0}
+.shortContent h1{font-size:clamp(45px,11vw,70px);font-weight:400;line-height:1.08;margin:0}
+.shortContent h2{font-size:clamp(25px,6vw,38px);font-weight:400;line-height:1.24;margin:0}
+.shortSub{font-size:16px;line-height:1.6;color:#f5e9dd;margin:0}
+.shortPackage{height:205px;width:260px;display:flex;justify-content:center;align-items:center;overflow:hidden}
+.shortPackage img{width:100%;height:100%;object-fit:contain;mix-blend-mode:screen}
+.shortPrimary{font:12px Arial,sans-serif;letter-spacing:1px;padding:16px 23px;border:1px solid #e9c88f;border-radius:40px;color:#362017;background:#f0d8ac;cursor:pointer;max-width:100%}
+.shortContent small{font:11px Arial,sans-serif;color:#e7d7bf}
+.shortProgress{width:min(100%,420px);display:flex;gap:5px;margin-top:14px;z-index:2}
+.shortProgress span{height:3px;background:#ffffff45;flex:1;border-radius:3px;overflow:hidden}
+.shortProgress b{display:block;height:100%;background:#f5d9a8}
+.shortClues{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.shortClues span{padding:9px 15px;border:1px solid #e7c99b8c;border-radius:25px;font-size:18px;color:#f9e5c3}
+.shortDelivery{font:12px Arial,sans-serif;letter-spacing:1px;color:#f0d4a7}
+.shortGreeting{font-size:22px}
+.shortNotice{font:12px Arial,sans-serif;color:#f0d4a7}
+.shortReplay,.shortPause{background:transparent;border:0;color:#fff9;font:12px Arial,sans-serif;cursor:pointer}
+.shortPause{min-height:28px;z-index:2}
+.shortSnow{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.shortSnow i{position:absolute;left:var(--x);top:-10px;width:3px;height:3px;border-radius:50%;background:#fff9;animation:shortFall 9s linear infinite;animation-delay:var(--delay)}
+@keyframes shortFall{to{transform:translate(15px,110vh)}}
+@keyframes shortIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
