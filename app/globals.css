@@ -236,12 +236,6 @@ linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
 .tgCoupon{display:none!important}
 @media(prefers-reduced-motion:reduce){.tgJewelryLight i,.tgRevealWord{animation:none!important}.tgRevealWord{opacity:1;transform:none;filter:none}}
 
-/* Oak & Luna: isolated brand and packaging overrides. TheoGrace is untouched. */
-.oakLuna .tgOfficialLogo{width:190px;object-fit:contain}
-.oakLuna .tgStoryTop .tgOfficialLogo{width:180px}
-.oakLuna .tgRealPackaging{background-image:url('/oak-luna-packaging.png')!important;width:min(76vw,350px)!important;height:235px!important;background-size:contain!important}
-
-/* Independent 15-second Christmas experiences */
 .shortXmas{position:relative;min-height:100dvh;overflow:hidden;display:flex;flex-direction:column;align-items:center;color:#fff;text-align:center;background:radial-gradient(ellipse at 50% 20%,#a43b3e 0%,#7c1d2c 43%,#350c1a 100%);font-family:Georgia,serif;padding:24px 18px 34px;isolation:isolate}
 .shortOak{background:radial-gradient(ellipse at 50% 20%,#4e5960 0%,#25333a 50%,#101c25 100%)}
 .shortXmas:before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 50% 45%,rgba(255,232,187,.16),transparent 55%)}
