@@ -10,7 +10,7 @@ const brands = {
     video: 'TheoGrace Christmas video',
     redComp: 'Automatic ShineOn late gift',
     monitoringComp: ['ShineOn product', '$20 compensation', '20% off next order'],
-    note: 'US flow. ShineOn can be used where timing still allows delivery before Christmas.'
+    note: 'US flow. ShineOn can be used only where timing still allows delivery before Christmas. Canada follows the no-on-time-product recovery path.'
   },
   oak: {
     label: 'Oak & Luna',
@@ -18,7 +18,7 @@ const brands = {
     video: 'Oak & Luna Christmas video',
     redComp: 'Automatic ShineOn late gift',
     monitoringComp: ['ShineOn product', '$20 compensation', '20% off next order'],
-    note: 'US flow. Same late-order framework, with Oak & Luna branding and tone of voice.'
+    note: 'US flow. Same late-order framework, with Oak & Luna branding and tone of voice. Canada follows the no-on-time-product recovery path.'
   },
   myka: {
     label: 'MYKA',
@@ -26,9 +26,10 @@ const brands = {
     video: 'MYKA Christmas video',
     redComp: 'HU compensation — no ShineOn',
     monitoringComp: ['HU compensation', '$20 equivalent / local compensation', '20% off next order'],
-    note: 'EU flow. No ShineOn product. Once the Red Event is missed, there is no realistic product replacement that can arrive by Christmas, so both scenarios converge.'
+    note: 'EU flow. No ShineOn product. Once the Red Event is missed, there is no realistic compensation product that can arrive by Christmas, so recovery shifts to a post-Christmas gift or monetary / future-order compensation.'
   }
 };
+
 
 const emailTemplates = [
   {label:'Red Event · free gift not on time',trigger:'Original order expected 2–3 days after Christmas; compensation choice',body:`Dear {{customer.firstName}},
@@ -134,17 +135,14 @@ export default function StrategyClient(){
           </Step>
           <Step n="2" title="Send branded late-XMAS message">
             Email / SMS explains the situation clearly and links to the branded Christmas experience.
-            <div className={styles.inlineEmailBlock}>
-              <div className={styles.emailTabs}>{emailTemplates.slice(0,2).map((item,i)=><button key={i} className={emailTemplate===i?styles.emailSelected:''} onClick={()=>setEmailTemplate(i)}>{item.label}</button>)}</div>
-              <div className={styles.emailPreview}><div className={styles.emailMeta}><strong>{emailTemplates[emailTemplate===2?0:emailTemplate].label}</strong><span>{emailTemplates[emailTemplate===2?0:emailTemplate].trigger}</span></div><div className={styles.emailText}>{emailTemplates[emailTemplate===2?0:emailTemplate].body}</div></div>
-            </div>
+            <div className={styles.tbd}>EMAIL COPY · TO BE ADDED</div>
           </Step>
           <Step n="3" title="Give something that still arrives for Christmas" tone="gold">
-            <b>US:</b> automatically send a ShineOn late gift where delivery timing still works.
-            <br/><b>MYKA EU:</b> use HU compensation instead — no ShineOn replacement.
+            <b>US:</b> automatically send a ShineOn late gift only where delivery timing still realistically works.
+            <br/><b>MYKA EU + Canada:</b> an on-time compensation product is not realistic. Offer another recovery option instead: a gift after Christmas, $20, or 20% off the next order.
           </Step>
           <Step n="4" title="Escalate only if the customer is still unhappy">
-            Agent options: refund shipping fees, or offer a 10–15% partial refund on the order.
+            Agent options: <b>$30 compensation</b>, refund shipping fees, or offer a 10–15% partial refund on the order.
           </Step>
         </div>
       </div> :
@@ -169,9 +167,6 @@ export default function StrategyClient(){
           <Step n="2" title="Proactive late-risk message">
             Tell the customer the gift <b>might</b> arrive late — before Christmas Eve disappointment.
             Include the branded Christmas video / experience.
-            <div className={styles.inlineEmailBlock}>
-              <div className={styles.emailPreview}><div className={styles.emailMeta}><strong>{emailTemplates[2].label}</strong><span>{emailTemplates[2].trigger}</span></div><div className={styles.emailText}>{emailTemplates[2].body}</div></div>
-            </div>
           </Step>
           <Step n="3" title="Customer chooses the compensation" tone="gold">
             Email links to a simple compensation page where the customer picks one option:
@@ -180,7 +175,7 @@ export default function StrategyClient(){
             </div>
           </Step>
           <Step n="4" title="Escalate only if still unhappy">
-            Agent options: refund shipping fees, or offer a 10–15% partial refund on the order.
+            Agent options: <b>$30 compensation</b>, refund shipping fees, or offer a 10–15% partial refund on the order.
           </Step>
         </div>
       </div>}
@@ -205,29 +200,8 @@ export default function StrategyClient(){
         <div className={styles.brandCols}>
           <div><small>RED EVENT</small><strong>{b.redComp}</strong></div>
           <div><small>LAST-DAY MONITORING</small><strong>{b.monitoringComp.join(' · ')}</strong></div>
-          <div><small>BRANDED EXPERIENCE</small><strong>{b.video}</strong><em>{brand === "theograce" ? "Validated · live experience available below" : brand === "oak" ? "Preview video available below" : "Not yet available"}</em></div>
+          <div><small>BRANDED VIDEO</small><strong>{b.video}</strong><em>TBD / production asset</em></div>
         </div>
-      </div>
-    </section>
-
-    <section className={styles.section}>
-      <div className={styles.sectionHeading}>
-        <span>VIDEO</span><div><h2>Christmas gift experiences</h2><p>Approved TheoGrace experience and Oak & Luna video preview.</p></div>
-      </div>
-      <div className={styles.experienceGrid}>
-        <article className={styles.experienceCard}>
-          <div className={styles.experienceHeader}><h3>TheoGrace</h3><span>VALIDATED</span></div>
-          <p>Approved interactive Christmas experience. Open the experience below to play the original animation and soundtrack.</p>
-          <iframe className={styles.experienceFrame} title="TheoGrace validated Christmas gift experience" src="https://theograce-xmas.vercel.app/gift/tg-x7k2p9fa" loading="lazy" allow="autoplay" />
-          <a className={styles.experienceLink} href="https://theograce-xmas.vercel.app/gift/tg-x7k2p9fa" target="_blank" rel="noopener noreferrer">Open validated TheoGrace experience ↗</a>
-        </article>
-        <article className={styles.experienceCard}>
-          <div className={styles.experienceHeader}><h3>Oak &amp; Luna</h3><span>VIDEO PREVIEW</span></div>
-          <p>Same approved TheoGrace experience, with Oak &amp; Luna logo and gift packaging, and without the Nicky Hilton scene.</p>
-          <video className={styles.experienceFrame} controls playsInline preload="metadata" src="/videos/oak-luna-preview.mp4" aria-label="Oak and Luna Christmas video preview" />
-          <a className={styles.experienceLink} href="/videos/oak-luna-preview.mp4" target="_blank" rel="noopener noreferrer">Open Oak &amp; Luna MP4 ↗</a>
-          <div className={styles.experiencePending}>Working preview for the meeting — final validation pending.</div>
-        </article>
       </div>
     </section>
 
@@ -358,27 +332,35 @@ export default function StrategyClient(){
 
         <div className={styles.futureLogic}>
           <div><small>IF US + SHINEON CAN ARRIVE</small><strong>Show gift + $20 + 20% options</strong></div>
-          <div><small>IF US + TOO LATE FOR PRODUCT</small><strong>Show $20 + 20% only</strong></div>
-          <div><small>IF MYKA EU</small><strong>Show HU compensation / gift card / future-order options</strong></div>
-          <div><small>IF CUSTOMER STILL COMPLAINS</small><strong>Refund shipping fees → 10–15% partial refund</strong></div>
+          <div><small>IF US + TOO LATE FOR PRODUCT</small><strong>Show post-XMAS gift + $20 + 20% next order</strong></div>
+          <div><small>IF CANADA</small><strong>No on-time product compensation → post-XMAS gift + $20 + 20% next order</strong></div>
+          <div><small>IF MYKA EU</small><strong>No on-time product compensation → HU / post-XMAS gift + $20 equivalent + 20% next order</strong></div>
+          <div><small>IF CUSTOMER STILL COMPLAINS</small><strong>$30 compensation → refund shipping fees → 10–15% partial refund</strong></div>
         </div>
       </div>
     </section>
 
+    <section className={styles.section}>
+      <div className={styles.sectionHeading}><span>07</span><div><h2>Customer communication playbook</h2><p>Actual customer-care templates · original wording retained · select a scenario to preview the email.</p></div></div>
+      <div className={styles.emailTabs}>{emailTemplates.map((item,i)=><button key={i} className={emailTemplate===i?styles.emailSelected:''} onClick={()=>setEmailTemplate(i)}>{item.label}</button>)}</div>
+      <div className={styles.emailPreview}><div className={styles.emailMeta}><strong>{emailTemplates[emailTemplate].label}</strong><span>{emailTemplates[emailTemplate].trigger}</span></div><div className={styles.emailText}>{emailTemplates[emailTemplate].body}</div></div>
+      <p className={styles.emailFootnote}>The customer variables and product-photo placeholder remain unchanged. The final links, brand videos and compensation landing pages will be added later.</p>
+    </section>
+
     <section className={styles.sectionAlt}>
       <div className={styles.sectionHeading}>
-        <span>07</span><div><h2>Communication architecture</h2><p>Customer email templates are now displayed within the relevant decision framework scenarios. TheoGrace validated experience is linked above; Oak & Luna is in progress.</p></div>
+        <span>08</span><div><h2>Communication architecture</h2><p>The real customer email will be inserted here once provided. Video assets will be added by brand.</p></div>
       </div>
       <div className={styles.assetGrid}>
         <div className={styles.assetCard}>
-          <div className={styles.assetIcon}>✉</div><h3>Customer email</h3>
-          <p>Late / at-risk message, clear explanation, emotional framing, CTA to video or compensation selection.</p>
-          <span>3 EMAIL TEMPLATES INCLUDED</span>
+          <div className={styles.assetIcon}>✉</div><h3>Real customer email</h3>
+          <p>The actual email sent to customers will be embedded here, including the final wording, video CTA and compensation-selection URL.</p>
+          <span>REAL EMAIL TO BE ADDED</span>
         </div>
         <div className={styles.assetCard}>
           <div className={styles.assetIcon}>▶</div><h3>Christmas videos</h3>
-          <p>TheoGrace validated interactive experience linked above. Oak &amp; Luna video preview embedded; MYKA pending.</p>
-          <span>THEOGRACE LIVE · OAK &amp; LUNA VIDEO PREVIEW</span>
+          <p>Three branded versions: TheoGrace, Oak & Luna, MYKA.</p>
+          <span>VIDEO ASSETS TBD</span>
         </div>
         <div className={styles.assetCard}>
           <div className={styles.assetIcon}>🎁</div><h3>Compensation products</h3>
@@ -390,28 +372,15 @@ export default function StrategyClient(){
 
     <section className={styles.section}>
       <div className={styles.sectionHeading}>
-        <span>08</span><div><h2>2025 compensation breakdown</h2><p>Year-over-year comparison: 2024 actual vs 2025 projected. The original graphic's “2023” label was a typo; figures and displayed YoY values are unchanged.</p></div>
+        <span>09</span><div><h2>2025 baseline → 2026 opportunity</h2><p>This section is ready for the real 2025 numbers so we can quantify impact and prioritize compensation.</p></div>
       </div>
       <div className={styles.metricGrid}>
-        <div><small>LATE ORDERS</small><strong>20K</strong><span>2025 projected</span></div>
-        <div><small>COMPENSATION CASES</small><strong>7,952</strong><span>2025 projected</span></div>
-        <div><small>TOTAL COST</small><strong>$74,246</strong><span>2025 projected</span></div>
-        <div><small>YOY COST</small><strong>+245%</strong><span>2024 vs 2025, as supplied</span></div>
+        <div><small>LATE XMAS ORDERS</small><strong>—</strong><span>2025 actual</span></div>
+        <div><small>CONTACT RATE</small><strong>—</strong><span>late-order customers</span></div>
+        <div><small>REFUND / CREDIT COST</small><strong>—</strong><span>2025 actual</span></div>
+        <div><small>CANCEL RATE</small><strong>—</strong><span>late-order customers</span></div>
       </div>
-      <div style={{overflowX:'auto',marginTop:24}}>
-        <table style={{width:'100%',borderCollapse:'collapse',textAlign:'left',minWidth:680}}>
-          <thead><tr><th>Category</th><th>2024 actual</th><th>2025 projected</th><th>Cost</th><th>YoY variance</th></tr></thead>
-          <tbody>
-            <tr><td>Free Gift Redemption</td><td>1,077</td><td>2,665</td><td>$35,164</td><td>+255%</td></tr>
-            <tr><td>Service Coupons ($20 - $50)</td><td>624</td><td>2,524</td><td>$0</td><td>+400%</td></tr>
-            <tr><td>Shipping Refunds</td><td>1,242</td><td>2,617</td><td>$34,702</td><td>+210%</td></tr>
-            <tr><td>$30 - Keep Your Order</td><td>N/A</td><td>146</td><td>$4,380</td><td>N/A</td></tr>
-            <tr><td>Cancellation Requests</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-            <tr style={{fontWeight:700,borderTop:'2px solid currentColor'}}><td>Total expenditure</td><td>2,943</td><td>7,952</td><td>$74,246</td><td>+245%</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p style={{fontSize:12,opacity:.75,marginTop:12}}>Source: supplied compensation breakdown. Year corrected from 2023 to 2024; all numerical values and supplied YoY percentages preserved.</p>
+      <div className={styles.placeholder}>Next input: 2025 volumes, complaint rate, refunds, cancellations, compensation cost, and top affected SKUs / families.</div>
     </section>
 
     <section className={styles.footer}>

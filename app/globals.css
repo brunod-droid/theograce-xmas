@@ -235,3 +235,40 @@ linear-gradient(160deg,#0d477f 0%,#082f5d 38%,#031a35 100%)}
 .tgEmotionalEnding strong{font:italic 24px/1.18 Georgia,serif;color:#f4ddb0}.tgEmotionalEnding span{font:400 16px/1.3 Georgia,serif;color:#fff8eb}
 .tgCoupon{display:none!important}
 @media(prefers-reduced-motion:reduce){.tgJewelryLight i,.tgRevealWord{animation:none!important}.tgRevealWord{opacity:1;transform:none;filter:none}}
+
+/* Oak & Luna: isolated brand and packaging overrides. TheoGrace is untouched. */
+.oakLuna .tgOfficialLogo{width:190px;object-fit:contain}
+.oakLuna .tgStoryTop .tgOfficialLogo{width:180px}
+.oakLuna .tgRealPackaging{background-image:url('/oak-luna-packaging.png')!important;width:min(76vw,350px)!important;height:235px!important;background-size:contain!important}
+
+/* Independent 15-second Christmas experiences */
+.shortXmas{position:relative;min-height:100dvh;overflow:hidden;display:flex;flex-direction:column;align-items:center;color:#fff;text-align:center;background:radial-gradient(ellipse at 50% 20%,#a43b3e 0%,#7c1d2c 43%,#350c1a 100%);font-family:Georgia,serif;padding:24px 18px 34px;isolation:isolate}
+.shortOak{background:radial-gradient(ellipse at 50% 20%,#4e5960 0%,#25333a 50%,#101c25 100%)}
+.shortXmas:before{content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 50% 45%,rgba(255,232,187,.16),transparent 55%)}
+.shortTop{width:min(100%,420px);display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:2}
+.shortTop img{width:150px;max-height:65px;object-fit:contain;filter:brightness(0) invert(1)}
+.shortOak .shortTop img{width:178px}
+.shortTop span{font:10px Arial,sans-serif;letter-spacing:2px;color:#f3e5cf}
+.shortContent{width:min(100%,450px);margin:auto;display:flex;align-items:center;flex-direction:column;justify-content:center;gap:16px;animation:shortIn .7s ease both;min-height:440px;z-index:2}
+.shortKicker{font:11px Arial,sans-serif;letter-spacing:3px;color:#ead7b3;margin:0}
+.shortContent h1{font-size:clamp(45px,11vw,70px);font-weight:400;line-height:1.08;margin:0}
+.shortContent h2{font-size:clamp(25px,6vw,38px);font-weight:400;line-height:1.24;margin:0}
+.shortSub{font-size:16px;line-height:1.6;color:#f5e9dd;margin:0}
+.shortPackage{height:205px;width:260px;display:flex;justify-content:center;align-items:center;overflow:hidden}
+.shortPackage img{width:100%;height:100%;object-fit:contain;mix-blend-mode:screen}
+.shortPrimary{font:12px Arial,sans-serif;letter-spacing:1px;padding:16px 23px;border:1px solid #e9c88f;border-radius:40px;color:#362017;background:#f0d8ac;cursor:pointer;max-width:100%}
+.shortContent small{font:11px Arial,sans-serif;color:#e7d7bf}
+.shortProgress{width:min(100%,420px);display:flex;gap:5px;margin-top:14px;z-index:2}
+.shortProgress span{height:3px;background:#ffffff45;flex:1;border-radius:3px;overflow:hidden}
+.shortProgress b{display:block;height:100%;background:#f5d9a8}
+.shortClues{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.shortClues span{padding:9px 15px;border:1px solid #e7c99b8c;border-radius:25px;font-size:18px;color:#f9e5c3}
+.shortDelivery{font:12px Arial,sans-serif;letter-spacing:1px;color:#f0d4a7}
+.shortGreeting{font-size:22px}
+.shortNotice{font:12px Arial,sans-serif;color:#f0d4a7}
+.shortReplay,.shortPause{background:transparent;border:0;color:#fff9;font:12px Arial,sans-serif;cursor:pointer}
+.shortPause{min-height:28px;z-index:2}
+.shortSnow{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.shortSnow i{position:absolute;left:var(--x);top:-10px;width:3px;height:3px;border-radius:50%;background:#fff9;animation:shortFall 9s linear infinite;animation-delay:var(--delay)}
+@keyframes shortFall{to{transform:translate(15px,110vh)}}
+@keyframes shortIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
